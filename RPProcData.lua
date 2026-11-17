@@ -147,6 +147,35 @@ RPProc_SeedData = {
             "Aus dir mach ich gehacktes, {name}.",
         },
     },
+    ["Tier freigeben"] = {
+        cat = "Jäger",
+        chance = 30,
+        petRequired = true, -- "Fass!" nur, wenn das Pet wirklich zuschlagen kann
+        messages = {
+            "Auf deinen Platz.",
+            "Bis gleich.",
+            "Du hast jetzt eine Runde freizeit.",
+        },
+    },
+    ["Tier füttern"] = {
+        cat = "Jäger",
+        chance = 30,
+        petRequired = true, -- "Fass!" nur, wenn das Pet wirklich zuschlagen kann
+        messages = {
+            "Hier, eine Kleinigkeit.",
+            "Wer ist ein Feiner? Bitteschön.",
+            "Gut gemacht! Hier hast du was.",
+        },
+    },
+    ["Tier wiederbeleben"] = {
+        cat = "Jäger",
+        chance = 30,
+        petRequired = false, -- "Fass!" nur, wenn das Pet wirklich zuschlagen kann
+        messages = {
+            "Wird gleich besser.",
+            "Ich kümmer' mich um dich.",
+        },
+    },
     ["Wildtiere aufspüren"] = {
         cat = "Jäger",
         chance = 30,
@@ -156,6 +185,14 @@ RPProc_SeedData = {
             "Ich spüre, wir sind nicht allein.",
             "Die Spuren von wilden Kreaturen..",
             "Ich spüre etwas wildes in der Nähe..",
+        },
+    },
+    ["Wildtier zähmen"] = {
+        cat = "Jäger",
+        chance = 90,
+        petRequired = false, -- "Fass!" nur, wenn das Pet wirklich zuschlagen kann
+        messages = {
+            "Ruhig, {name}.",
         },
     },
 
