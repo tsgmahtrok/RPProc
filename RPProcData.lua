@@ -172,6 +172,7 @@ RPProc_SeedData = {
         chance = 90,
         selfCast = true,
         petRequired = true, -- "Fass!" nur, wenn das Pet wirklich zuschlagen kann
+		spell = false,
         messages = {
             "Hiiieer her!",
             "Bei Fuß!",
