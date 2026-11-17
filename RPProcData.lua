@@ -127,7 +127,7 @@ RPProc_SeedData = {
         messages = {
             "Fass!",
             "Schnapp dir {name}!",
-            "Beiss!",
+            "Beiß!",
             "Und los!",
             "Hol dir {name}!",
             "Auf geht's!",
