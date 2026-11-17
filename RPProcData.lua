@@ -120,18 +120,18 @@ RPProc_SeedData = {
     },
     ["Mal des Jägers"] = {
         cat = "Jäger",
-        chance = 30,
+        chance = 15,
         selfCast = false,
         mode = "enemy",
         petRequired = true, -- "Fass!" nur, wenn das Pet wirklich zuschlagen kann
         messages = {
             "Fass!",
-            "Schnapp's dir!",
+            "Schnapp dir {name}!",
             "Beiss!",
             "Und los!",
-            "Hol's dir!",
+            "Hol dir {name}!",
             "Auf geht's!",
-            "Geh' spiel'n!",
+            "Geh', spiel mit {name}!",
         },
     },
     ["Raptorstoß"] = {
@@ -149,7 +149,7 @@ RPProc_SeedData = {
     },
     ["Tier freigeben"] = {
         cat = "Jäger",
-        chance = 30,
+        chance = 90,
         petRequired = true, -- "Fass!" nur, wenn das Pet wirklich zuschlagen kann
         messages = {
             "Auf deinen Platz.",
@@ -169,10 +169,12 @@ RPProc_SeedData = {
     },
     ["Tier wiederbeleben"] = {
         cat = "Jäger",
-        chance = 30,
+        chance = 90,
         petRequired = false, -- "Fass!" nur, wenn das Pet wirklich zuschlagen kann
         messages = {
+            "Bin schon da, ich hab dich.",
             "Wird gleich besser.",
+            "Lass mich mal sehen, wird gleich besser.",
             "Ich kümmer' mich um dich.",
         },
     },
@@ -193,6 +195,7 @@ RPProc_SeedData = {
         petRequired = false, -- "Fass!" nur, wenn das Pet wirklich zuschlagen kann
         messages = {
             "Ruhig, {name}.",
+            "Brav, {name}.",
         },
     },
 
