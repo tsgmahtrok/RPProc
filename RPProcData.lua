@@ -167,6 +167,17 @@ RPProc_SeedData = {
             "Gut gemacht! Hier hast du was..",
         },
     },
+    ["Tier heilen"] = {
+        cat = "Jäger",
+        chance = 30,
+        selfCast = true,
+        petRequired = true, -- "Fass!" nur, wenn das Pet wirklich zuschlagen kann
+        messages = {
+            "Hier, gleich geht's dir besser..",
+            "Ruuhig, ich kümmer' mich d'rum..",
+            "Ganz ruhig, ich bin da..",
+        },
+    },
     ["Tier rufen"] = {
         cat = "Jäger",
         chance = 90,
