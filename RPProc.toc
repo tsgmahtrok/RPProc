@@ -1,0 +1,8 @@
+## Interface: 16001
+## Title: RPProc
+## Notes: Rollenspiel-Sprüche per Makro mit globaler und skillbasierter Proc-Chance, im Spiel editierbar (SavedVariables + UI)
+## Author: Sebastian
+## SavedVariables: RPProcDB
+RPProcData.lua
+RPProc.lua
+RPProcUI.lua
