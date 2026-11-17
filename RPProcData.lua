@@ -162,9 +162,19 @@ RPProc_SeedData = {
         chance = 30,
         petRequired = true, -- "Fass!" nur, wenn das Pet wirklich zuschlagen kann
         messages = {
-            "Hier, eine Kleinigkeit.",
-            "Wer ist ein Feiner? Bitteschön.",
-            "Gut gemacht! Hier hast du was.",
+            "Hier, eine Kleinigkeit für dich..",
+            "Wer ist ein Feiner? Hier, für dich..",
+            "Gut gemacht! Hier hast du was..",
+        },
+    },
+    ["Tier rufen"] = {
+        cat = "Jäger",
+        chance = 90,
+        selfCast = true,
+        petRequired = true, -- "Fass!" nur, wenn das Pet wirklich zuschlagen kann
+        messages = {
+            "Hiiieer her!",
+            "Bei Fuß!",
         },
     },
     ["Tier wiederbeleben"] = {
@@ -176,6 +186,7 @@ RPProc_SeedData = {
             "Wird gleich besser.",
             "Lass mich mal sehen, wird gleich besser.",
             "Ich kümmer' mich um dich.",
+            "Das haben wir gleich, bleib ruhig.",
         },
     },
     ["Wildtiere aufspüren"] = {
