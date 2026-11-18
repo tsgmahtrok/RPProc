@@ -121,6 +121,16 @@ RPProc_SeedData = {
             "Schneller als ein Gepard.",
         },
     },
+    ["Augen des Wildtiers"] = {
+        cat = "Jäger",
+        chance = 30,
+        selfCast = true,
+        petRequired = true,
+        messages = {
+            "Zeig' mir was du siehst.",
+            "Das sehe ich mir genauer an.",
+        },
+    },
     ["Erschütternder Schuss"] = {
         cat = "Jäger",
         chance = 5,
@@ -252,6 +262,16 @@ RPProc_SeedData = {
             "Lass mich mal sehen, wird gleich besser.",
             "Ich kümmer' mich um dich.",
             "Das haben wir gleich, bleib ruhig.",
+        },
+    },
+    ["Untote aufspüren"] = {
+        cat = "Jäger",
+        chance = 30,
+        selfCast = true,
+        messages = {
+            "Ich suche nach Spuren untoter Dinge.",
+            "Ich Suche nach untoten Dingen.",
+            "Ich folge dem Geruch untoter Dinge.",
         },
     },
     ["Wildtier ängstigen"] = {
@@ -964,6 +984,43 @@ RPProc_SeedData = {
             "Ihr Geister, erlöst {name} von diesem Gift.",
         },
     },
+    ["Wasseratmung"] = {
+        cat = "Schamane",
+        chance = 10,
+        selfCast = false,
+        mode = "friend",
+        messages = {
+            "Gehe mit dem Segen des Wassers, {name}.",
+            "Gehe mit dem Wohlwollen des Wassers, {name}.",
+            "Das Wasser empfängt dich nun, {name}.",
+            "Das Wasser ist dir freundlich gesinnt, {name}.",
+        },
+    },
+	["Waffe des Felsbeißers"] = {
+        cat = "Schamane",
+        chance = 35,
+        selfCast = true,
+        messages = {
+            "Elemente der Erde, segnet diese Waffe!",
+        },
+    },
+	["Waffe der Flammenzunge"] = {
+        cat = "Schamane",
+        chance = 35,
+        selfCast = true,
+        messages = {
+            "Elemente der Flamme, segnet diese Waffe!",
+        },
+    },
+	["Waffe des Frostbrands"] = {
+        cat = "Schamane",
+        chance = 35,
+        selfCast = true,
+        messages = {
+            "Elemente des Wassers, segnet diese Waffe!",
+        },
+    },
+	
 
     -- << Schurke >>
     -- << Todesritter >>
