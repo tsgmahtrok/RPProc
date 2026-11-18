@@ -61,6 +61,18 @@ RPProc_SeedData = {
     -- << Druide >>
     -- << Hexenmeister >>
     -- << Jäger >>
+    ["Ablenkender Schuss"] = {
+        cat = "Jäger",
+        chance = 15,
+        selfCast = false,
+        mode = "enemy",
+        messages = {
+            "Lass ihn in Ruhe, {name}!",
+            "Oy, {name}! Hier bin ich!",
+            "Oy, {name}! Schau hier her!",
+            "Oy! {name}!",
+        },
+    },
     ["Arkaner Schuss"] = {
         cat = "Jäger",
         chance = 5,
@@ -70,9 +82,43 @@ RPProc_SeedData = {
             "Ruhig halten.",
             "Blattschuß.",
             "Volle Ladung.",
-            "Diese Kugel ist speziell für dich, {name}.",
+            "Diese Kugel is' speziell für dich, {name}.",
             "Diese Kugel trägt den Namen {name}.",
             "Zwischen die Augen.",
+        },
+    },
+    ["Aspekt des Affen"] = {
+        cat = "Jäger",
+        chance = 30,
+        selfCast = true,
+        messages = {
+            "Aufmerksamkeit un' Schnelligkeit.",
+            "Alles eine Frage der Reflexe.",
+            "Kraft und Beweglichkeit.",
+        },
+    },
+    ["Aspekt des Falken"] = {
+        cat = "Jäger",
+        chance = 30,
+        selfCast = true,
+        messages = {
+            "Ich habe die Aug'n eines Falk'n.",
+            "Konzentration is' alles was's brauch'.",
+            "Ich kann Seh'n, wie der Falke.",
+            "Man muss sich nur richtig konzentrier'n.",
+        },
+    },
+    ["Aspekt des Geparden"] = {
+        cat = "Jäger",
+        chance = 30,
+        selfCast = true,
+        messages = {
+            "Flinke Füße!",
+            "Zeit für ein wenig Tempo.",
+            "Gleichmäßig atmen, das ist der Trick.",
+            "Der Weg ist weit, auf geht's.",
+            "Eile is' geboten.",
+            "Schneller als ein Gepard.",
         },
     },
     ["Erschütternder Schuss"] = {
@@ -86,36 +132,14 @@ RPProc_SeedData = {
             "Oy, mach langsam, {name}.",
         },
     },
-    ["Aspekt des Affen"] = {
+    ["Humanoide aufspüren"] = {
         cat = "Jäger",
         chance = 30,
         selfCast = true,
         messages = {
-            "Vorsicht ist geboten.",
-            "Ich bin bereit.",
-            "Gewandt wie ein Affe.",
-            "Flink wie der Affe.",
-        },
-    },
-    ["Aspekt des Falken"] = {
-        cat = "Jäger",
-        chance = 30,
-        selfCast = true,
-        messages = {
-            "Ich habe die Augen eines Falken.",
-            "Konzentration..",
-            "Wie ein Falke.",
-        },
-    },
-    ["Aspekt des Geparden"] = {
-        cat = "Jäger",
-        chance = 30,
-        selfCast = true,
-        messages = {
-            "Flinke Füße!",
-            "Der Weg ist weit.",
-            "Ich eile.",
-            "Wie der Gepard.",
+            "Ich Suche nach Spuren anderer Zweibeiner.",
+            "Es stinkt nach Zweibeinern, igitt.",
+            "Ich Folge den Spuren argloser Zweibeiner.",
         },
     },
     ["Mal des Jägers"] = {
@@ -134,6 +158,21 @@ RPProc_SeedData = {
             "Geh', spiel mit {name}!",
         },
     },
+    ["Mungobiss"] = {
+        cat = "Jäger",
+        chance = 5,
+        selfCast = false,
+        mode = "enemy",
+        messages = {
+            "Hah!",
+            "Ney!",
+            "Hahah!",
+            "Hast'e g'dacht!",
+            "Hoo ya!",
+            "Versuch's nochmal!",
+            "So nich'!",
+        },
+    },
     ["Raptorstoß"] = {
         cat = "Jäger",
         chance = 5,
@@ -145,6 +184,18 @@ RPProc_SeedData = {
             "Spür' meine Klinge, {name}.",
             "Zwischen die Rippen geht am schnellsten.",
             "Aus dir mach ich gehacktes, {name}.",
+        },
+    },
+    ["Schlangenbiss"] = {
+        cat = "Jäger",
+        chance = 5,
+        selfCast = false,
+        mode = "enemy",
+        messages = {
+            "Mal seh'n wie dir das schmeckt, {name}.",
+            "Ein wenig Gift für dich, {name}.",
+            "Extra hohe Dosis für dich, {name}.",
+            "Die Dosis macht das Gift.",
         },
     },
     ["Tier freigeben"] = {
@@ -185,14 +236,16 @@ RPProc_SeedData = {
         petRequired = true, -- "Fass!" nur, wenn das Pet wirklich zuschlagen kann
 		spell = false,
         messages = {
-            "Hiiieer her!",
+            "Hiieer her!",
             "Bei Fuß!",
+            "Komm' her!",
+            "Zuurück!",
         },
     },
     ["Tier wiederbeleben"] = {
         cat = "Jäger",
         chance = 90,
-        petRequired = false, -- "Fass!" nur, wenn das Pet wirklich zuschlagen kann
+        petRequired = false,
         messages = {
             "Bin schon da, ich hab dich.",
             "Wird gleich besser.",
@@ -201,15 +254,26 @@ RPProc_SeedData = {
             "Das haben wir gleich, bleib ruhig.",
         },
     },
-    ["Wildtiere aufspüren"] = {
+    ["Wildtier ängstigen"] = {
         cat = "Jäger",
         chance = 30,
+        selfCast = false,
+        mode = "enemy",
+        messages = {
+            "Buh!",
+            "Grooarr!",
+            "Mach' dich ab!",
+        },
+    },
+    ["Wildtiere aufspüren"] = {
+        cat = "Jäger",
+        chance = 25,
         selfCast = true,
         messages = {
-            "Der Duft der Wildnis.",
-            "Ich spüre, wir sind nicht allein.",
-            "Die Spuren von wilden Kreaturen..",
-            "Ich spüre etwas wildes in der Nähe..",
+            "Ah, der Duft der Wildnis.",
+            "Ich Suche nach Spuren wilder Kreaturen.",
+            "Ich Suche nach Spuren wilder Tiere.",
+            "Ich Folge den Spuren wilder Kreaturen.",
         },
     },
     ["Wildtier zähmen"] = {
@@ -219,6 +283,21 @@ RPProc_SeedData = {
         messages = {
             "Ruhig, {name}.",
             "Brav, {name}.",
+        },
+    },
+    ["Zurechtstutzen"] = {
+        cat = "Jäger",
+        chance = 30,
+        selfCast = false,
+        mode = "enemy",
+        messages = {
+            "Nich' so schnell, {name}!",
+            "Eine Sehne weniger!",
+            "Schnipp Schnapp, Sehne ab!",
+            "Immer langsam, {name}!",
+            "Bleib' mir weg, {name}!",
+            "Fang mich doch, {name}!",
+            "Ich stutz' dich, {name}!",
         },
     },
 
