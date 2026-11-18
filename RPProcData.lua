@@ -193,7 +193,7 @@ RPProc_SeedData = {
         mode = "enemy",
         messages = {
             "Mal seh'n wie dir das schmeckt, {name}.",
-            "Ein wenig Gift für dich, {name}.",
+            "Gift, löst die meisten Probleme.",
             "Extra hohe Dosis für dich, {name}.",
             "Die Dosis macht das Gift.",
         },

@@ -101,7 +101,7 @@ local RPProc_Defaults = {
     globalChance = 100, -- 0-100: gewinnt VOR der Set-Chance, für alles
     cooldown     = 10.0, -- Sekunden zwischen zwei Sprüchen global, 0 = aus
     language     = nil, -- globale Standardsprache (Sprach-ID als Zahl); nil = Client-Standard
-    debug        = true,
+    debug        = false,
     enabled      = true,
 }
 
