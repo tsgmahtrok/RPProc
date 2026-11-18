@@ -27,7 +27,7 @@ RPProc_SeedData = {
     -- << General >>
     ["Mineraliensuche"] = {
         cat = "General",
-        chance = 30,
+        chance = 90,
         selfCast = true,
         messages = {
             "Ich glaube, ..ich rieche Erz!",
@@ -36,7 +36,7 @@ RPProc_SeedData = {
     },
     ["Steingestalt"] = {
         cat = "General",
-        chance = 30,
+        chance = 35,
         selfCast = true,
         messages = {
             "Hart wie Stein!",
@@ -50,7 +50,7 @@ RPProc_SeedData = {
     },
     ["Schatzsucher"] = {
         cat = "General",
-        chance = 30,
+        chance = 90,
         selfCast = true,
         messages = {
             "Wo verstecken sich die Schätze?",
@@ -144,7 +144,7 @@ RPProc_SeedData = {
     },
     ["Humanoide aufspüren"] = {
         cat = "Jäger",
-        chance = 30,
+        chance = 90,
         selfCast = true,
         messages = {
             "Ich Suche nach Spuren anderer Zweibeiner.",
@@ -266,7 +266,7 @@ RPProc_SeedData = {
     },
     ["Untote aufspüren"] = {
         cat = "Jäger",
-        chance = 30,
+        chance = 90,
         selfCast = true,
         messages = {
             "Ich suche nach Spuren untoter Dinge.",
@@ -287,7 +287,7 @@ RPProc_SeedData = {
     },
     ["Wildtiere aufspüren"] = {
         cat = "Jäger",
-        chance = 25,
+        chance = 90,
         selfCast = true,
         messages = {
             "Ah, der Duft der Wildnis.",
@@ -898,7 +898,6 @@ RPProc_SeedData = {
             "Ihr Ahnen, schenkt mir die Kraft des Wolfes!",
             "Kraft des Wolfes!",
             "Ich habe die Kraft des Wolfes!",
-            "Ich rufe dich, mein innerer Schweine..wolf!",
             "Ich mach mich auf die Pfoten!",
         },
     },
