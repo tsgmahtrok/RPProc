@@ -361,10 +361,13 @@ RPProc_SeedData = {
     },
 	["Drohruf"] = {
         cat = "Krieger",
-        chance = 15,
+        chance = 30,
         selfCast = true,
         messages = {
-            "Aus meinen Augen!",
+            "JETZT habt ihr mich wütend gemacht!",
+            "Ihr wollt euch mit MIR Anlegen?!",
+            "Hahahaa, so macht das Laune!",
+            "Endlich, eine echte Herausforderung!",
         },
     },
     ["Entwaffnen"] = {
