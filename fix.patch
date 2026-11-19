@@ -1,4 +1,6 @@
+git pull
 git apply fix.patch
 git add RPProc.lua
+git rm fix.patch
 git commit -m "Engine 2.9-SecretValueFix: Vergleiche von Spell-API-Rueckgabewerten in pcall"
 git push
