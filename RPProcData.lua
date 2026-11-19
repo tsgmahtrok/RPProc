@@ -27,13 +27,14 @@ RPProc_SeedData = {
     -- << General >>
     ["Armbrust abschießen"] = {
         cat = "General",
-        chance = 90,
+        chance = 35,
         selfCast = false,
         mode = "enemy",
         messages = {
             "Gut gezielt ist halb getroffen..",
             "Achtung, Blattschuß.",
             "Ruhe, Ich ziele..",
+            "Ziel im Visir.",
             "Der trifft, und zwar Zwischen die Augen!",
         },
     },
@@ -43,7 +44,8 @@ RPProc_SeedData = {
         selfCast = true,
         messages = {
             "Ich glaube, ..ich rieche Erz!",
-            "Ich spüre, Erz..",
+            "Irgendwo hier müsste Erz zu finden sein!",
+            "Ich rieche, ..Erz!",
         },
     },
     ["Steingestalt"] = {
@@ -71,19 +73,20 @@ RPProc_SeedData = {
     },
     ["Schusswaffe abfeuern"] = {
         cat = "General",
-        chance = 90,
+        chance = 35,
         selfCast = false,
         mode = "enemy",
         messages = {
             "Gut gezielt ist halb getroffen..",
             "Achtung, Blattschuß.",
             "Ruhe, Ich ziele..",
+            "Ziel im Visir.",
             "Der trifft, und zwar Zwischen die Augen!",
         },
     },
     ["Werfen"] = {
         cat = "General",
-        chance = 90,
+        chance = 35,
         selfCast = false,
         mode = "enemy",
         messages = {
@@ -373,15 +376,16 @@ RPProc_SeedData = {
         selfCast = true,
         messages = {
             "Ist das schon alles?!",
-            "Für Khaz Modan!",
+            "Ich Lache euch ins Gesicht!",
+            "Großmutter Goldflaum ist gefährlicher als ihr!",
+            "Von hier bis Khaz Modan!",
             "Fels und Stein!",
             "Kein Zoll breit zurück!",
             "Ich werde nicht weichen!",
             "Kraft und Ehre!",
-            "Standhaft bis zum Schwarzfels!",
-            "Die Garde hält Stand!",
-            "Sturmhammer und Bronzebart!",
+            "Ich bin ein Bronzebart aus Eisenschmiede!",
             "Je kürzer die Beine, desto größer die Wut!",
+            "Ich halte Stand, für Magni und die Bronzebärte!",
         },
     },
     ["Donnerknall"] = {
@@ -399,10 +403,16 @@ RPProc_SeedData = {
         chance = 30,
         selfCast = true,
         messages = {
+            "Wie wär's mit einem Lied?",
+            "Wie wär's, ich singe uns eine Zwergenweise!?",
             "JETZT habt ihr mich wütend gemacht!",
+            "Jetzt werd' ich aber langsam sauer!",
             "Ihr wollt euch mit MIR Anlegen?!",
             "Hahahaa, so macht das Laune!",
-            "Endlich, eine echte Herausforderung!",
+            "Endlich, fast schon eine Herausforderung!",
+            "Ich bin TOD! Ich bin VERDERBEN!",
+            "Tod, Verderben, Fluch über euch!",
+            "Ihr wollt mir ans Leder? Das ich nicht Lache!",
         },
     },
     ["Entwaffnen"] = {
@@ -412,9 +422,11 @@ RPProc_SeedData = {
         mode = "enemy",
         messages = {
             "Au! Gib mir das!",
+            "Her damit!",
             "Uh schick, kann ich ma' seh'n?",
             "Gib das her, du verletzt noch jemand!",
             "Zeig' ma' her, was hast du denn da, {name}?",
+            "Zeig' ma' her, das Spielzeug.",
         },
     },
     ["Gegenschlag"] = {
@@ -475,9 +487,11 @@ RPProc_SeedData = {
         messages = {
             "Die Rüstung ist schwach, hier..., und hier!",
             "Die Rüstung ist schwach unter den Achseln!",
+            "Die Rüstung ist schwach am Hals!",
             "Das soll Rüstung sein?!",
             "Das sind ja mehr Löcher als Rüstung!",
             "Diese Fetzen nennst du Rüstung?!",
+            "Ich zerleg' dich, Stück für Stück!",
         },
     },
     ["Schildhieb"] = {
@@ -538,13 +552,14 @@ RPProc_SeedData = {
         chance = 15,
         selfCast = true,
         messages = {
-            "Sturmhämmer vor!",
-            "Sturmhämmer sind immer vorn!",
-            "Für Sturmhammer und die Garde!",
+            "Bronzebärte vor!",
+            "Bronzebärte immer vorn!",
             "Fels und Stein!",
-            "Für die Garde!",
             "Khaz Modan!",
-            "Sturmhammers Garde!",
+            "Für Eisenschmiede!",
+            "Für Eisenschmiede und den Großkönig!",
+            "Für den Großkönig!",
+            "Für Magni und die Bronzebärte!",
             "In's Gefecht, für Sturmhammer und die Garde!",
         },
     },
