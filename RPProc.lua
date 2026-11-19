@@ -86,7 +86,7 @@
       /rpp langtest 5          -- Sprach-ID testen: sendet SAY in dieser Sprache
 =========================================================================]]--
 
-RPProc_Version = "2.8-DataSplit" -- /run print(RPProc_Version) zum Pruefen
+RPProc_Version = "2.9-SecretValueFix" -- /run print(RPProc_Version) zum Pruefen
 -- Daten-File: /run print(RPProc_DataVersion) zeigt die Seed-Version an
 
 ---------------------------------------------------------------------
@@ -300,7 +300,15 @@ local function RPProc_Impl(setName, chance, forceUnit, channel, language)
             if type(start) == "table" then
                 start = start.startTime or start.duration or 0
             end
-            if start == nil or start == 0 then
+            -- FIX 2.9-SecretValueFix: Manche Clients (Forever) liefern den
+            -- Cooldown als "secret number value"; JEGLICHER direkte
+            -- Vergleich wirft dann "attempt to compare local 'start'
+            -- (a secret number value)". Der Vergleich selbst muss daher
+            -- in pcall (SafeCall). Schlägt er fehl, gilt der Wert als
+            -- "kein CD" -> Fallback-Pfad prüft weiter.
+            local startIsZero = RPProc_SafeCall(function(v) return v == nil or v == 0 end, start)
+            if startIsZero == nil then startIsZero = true end
+            if startIsZero then
                 -- Fallback: Manche Clients (Forever) liefern bei IsUsableSpell
                 -- KEINEN 2. Rueckgabewert (noMana immer nil) -> Fall A greift
                 -- nie. Bei Wut-/Energie-Klassen (UnitPowerType 1/3) bedeutet
@@ -308,7 +316,10 @@ local function RPProc_Impl(setName, chance, forceUnit, channel, language)
                 -- Ressource wurde eben fuer den Cast verbraucht -> Proc
                 -- erlauben. Mana-Klassen behalten die strenge Pruefung.
                 local powerType = RPProc_SafeCall(UnitPowerType, "player")
-                if powerType == 1 or powerType == 3 then
+                -- FIX 2.9: powerType kann ebenso Secret-Value sein ->
+                -- Vergleich in pcall verpacken
+                local isRageOrEnergy = RPProc_SafeCall(function(v) return v == 1 or v == 3 end, powerType)
+                if isRageOrEnergy then
                     RPProc_Debug("Zauber '" .. tostring(spell) .. "' nicht einsetzbar, kein Cooldown, Wut-/Energie-Klasse ("
                         .. tostring(powerType) .. ") - vermutlich eben verbraucht, Proc erlaubt"
                         .. " [usable=" .. tostring(usable) .. ", noMana=" .. tostring(noMana) .. "]")
@@ -333,7 +344,9 @@ local function RPProc_Impl(setName, chance, forceUnit, channel, language)
                     inRange = RPProc_SafeCall(rangeFn, sid, u)
                 end
             end
-            if inRange == 0 or inRange == false then
+            -- FIX 2.9: inRange kann Secret-Value sein -> Vergleich in pcall
+            local outOfRange = RPProc_SafeCall(function(v) return v == 0 or v == false end, inRange)
+            if outOfRange then
                 RPProc_Debug("Ziel ausser Reichweite fuer '" .. tostring(spell) .. "'"
                     .. " [inRange=" .. tostring(inRange) .. "]")
                 return
