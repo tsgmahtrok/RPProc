@@ -359,6 +359,14 @@ RPProc_SeedData = {
             "Na los, tanzen wir!",
         },
     },
+	["Drohruf"] = {
+        cat = "Krieger",
+        chance = 15,
+        selfCast = true,
+        messages = {
+            "Aus meinen Augen!",
+        },
+    },
     ["Entwaffnen"] = {
         cat = "Krieger",
         chance = 25,
@@ -393,6 +401,18 @@ RPProc_SeedData = {
             "Je'n heldenhafteren Stoß gesehen als den hier, {name}?",
         },
     },
+    ["Kniesehne"] = {
+        cat = "Krieger",
+        chance = 10,
+        selfCast = false,
+        mode = "enemy",
+        messages = {
+            "Nich' so schnell, {name}!",
+            "Auf die Sehne!",
+            "Schnipp Schnapp, Sehne ab!",
+            "Immer langsam, {name}!",
+        },
+    },
     ["Rache"] = {
         cat = "Krieger",
         chance = 25,
@@ -407,18 +427,6 @@ RPProc_SeedData = {
             "Versuch's nochmal!",
             "So nich'!",
             "Kopfnuss!",
-        },
-    },
-    ["Kniesehne"] = {
-        cat = "Krieger",
-        chance = 10,
-        selfCast = false,
-        mode = "enemy",
-        messages = {
-            "Nich' so schnell, {name}!",
-            "Auf die Sehne!",
-            "Schnipp Schnapp, Sehne ab!",
-            "Immer langsam, {name}!",
         },
     },
     ["Schildhieb"] = {
@@ -495,8 +503,8 @@ RPProc_SeedData = {
         selfCast = true,
         messages = {
 			"Was hab'n wir denn hier?",
-            "Nun zu dir, {name}!",
-            "Und nun zu uns, {name}!",
+            "Nun zu dir!",
+            "Und nun zu uns!",
             "Weiter geht's!",
         },
     },
