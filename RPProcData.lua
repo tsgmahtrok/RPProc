@@ -25,6 +25,18 @@ RPProc_DataVersion = "2026-11-16" -- /run print(RPProc_DataVersion) zum Pruefen
 
 RPProc_SeedData = {
     -- << General >>
+    ["Armbrust abschießen"] = {
+        cat = "General",
+        chance = 90,
+        selfCast = false,
+        mode = "enemy",
+        messages = {
+            "Gut gezielt ist halb getroffen..",
+            "Achtung, Blattschuß.",
+            "Ruhe, Ich ziele..",
+            "Der trifft, und zwar Zwischen die Augen!",
+        },
+    },
     ["Mineraliensuche"] = {
         cat = "General",
         chance = 90,
@@ -55,6 +67,29 @@ RPProc_SeedData = {
         messages = {
             "Wo verstecken sich die Schätze?",
             "Ich glaube, ich rieche Reichtum..",
+        },
+    },
+    ["Schusswaffe abfeuern"] = {
+        cat = "General",
+        chance = 90,
+        selfCast = false,
+        mode = "enemy",
+        messages = {
+            "Gut gezielt ist halb getroffen..",
+            "Achtung, Blattschuß.",
+            "Ruhe, Ich ziele..",
+            "Der trifft, und zwar Zwischen die Augen!",
+        },
+    },
+    ["Werfen"] = {
+        cat = "General",
+        chance = 90,
+        selfCast = false,
+        mode = "enemy",
+        messages = {
+            "Gut gezielt ist halb getroffen..",
+            "Ins Gesicht!",
+            "Fang!",
         },
     },
 
@@ -430,6 +465,19 @@ RPProc_SeedData = {
             "Versuch's nochmal!",
             "So nich'!",
             "Kopfnuss!",
+        },
+    },
+    ["Rüstung zerreißen"] = {
+        cat = "Krieger",
+        chance = 5,
+        selfCast = false,
+        mode = "enemy",
+        messages = {
+            "Die Rüstung ist schwach, hier..., und hier!",
+            "Die Rüstung ist schwach unter den Achseln!",
+            "Das soll Rüstung sein?!",
+            "Das sind ja mehr Löcher als Rüstung!",
+            "Diese Fetzen nennst du Rüstung?!",
         },
     },
     ["Schildhieb"] = {
