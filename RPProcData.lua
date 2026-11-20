@@ -53,8 +53,9 @@ RPProc_SeedData = {
         chance = 90,
         selfCast = true,
         messages = {
-            "In dieser Gegend soll es ein seltene Pflanzen geben.",
+            "In dieser Gegend soll es seltene Pflanzen geben.",
             "Ich achte besonders auf seltene Pflanzen.",
+            "Ich hab' ein Näschen für seltene Pflanzen.",
             "Ich halte immer die Augen auf, nach besonders seltenen Pflanzen.",
         },
     },
@@ -762,12 +763,12 @@ RPProc_SeedData = {
         selfCast = false,
         mode = "friend",
         messages = {
-            "Ich segne dich, {name}, mit der Macht des Lichts!",
-            "Der Segen der Macht, {name}.",
+            "Ich segne dich, {name}, mit der Macht des Lichts, missbrauche sie nicht.",
+            "Der Segen der Macht, {name}, nutze sie Weise.",
             "Licht, gib {name} die Macht.",
             "Licht, segne {name} mit deiner Macht.",
             "Segne {name} mit der Macht des Lichts.",
-            "Das Licht gebe dir Macht, {name}.",
+            "Das Licht gebe dir Macht, {name}, setze sie Weise ein.",
         },
     },
     ["Segen der Weisheit"] = {
