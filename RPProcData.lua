@@ -819,7 +819,8 @@ RPProc_SeedData = {
     ["Siegel des Furors"] = {
         cat = "Paladin",
         chance = 15,
-        selfCast = true,
+        selfCast = false,
+        mode = "enemy",
         messages = {
             "Dies sei meine Anklage, {name}!",
             "Höre meine Anklage, {name}!",
