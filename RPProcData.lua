@@ -53,9 +53,9 @@ RPProc_SeedData = {
         chance = 90,
         selfCast = true,
         messages = {
-            "Ich glaube, ..ich rieche Flora!",
-            "Irgendwo hier müsste ein seltenes Blümchen sein!",
-            "Ich rieche, ..Blumen!",
+            "In dieser Gegend soll es ein seltene Pflanzen geben.",
+            "Ich achte besonders auf seltene Pflanzen.",
+            "Ich halte immer die Augen auf, nach besonders seltenen Pflanzen.",
         },
     },
     ["Steingestalt"] = {
@@ -715,7 +715,7 @@ RPProc_SeedData = {
     },
     ["Heiliger Stoß"] = {
         cat = "Paladin",
-        chance = 5,
+        chance = 15,
         selfCast = false,
         mode = "enemy",
         messages = {
@@ -742,9 +742,12 @@ RPProc_SeedData = {
         selfCast = false,
         mode = "enemy",
         messages = {
+            "Das Licht wird dich richten, {name}!",
             "Empfange dein Urteil, {name}!",
-            "Das Licht wird über dein Urteil entscheiden!",
+            "Empfange deinen Richtsspruch, {name}!",
+            "Das Licht wird über dein Urteil befinden, {name}!",
             "Stelle dich deinem Urteil, {name}!",
+            "Ich bin gekommen, dich zu richten, {name}!",
         },
     },
     ["Segen der Macht"] = {
@@ -802,18 +805,50 @@ RPProc_SeedData = {
             "Empfange Rettung, {name}, durch die Kraft des Lichts.",
         },
     },
+    ["Segen des Schutzes"] = {
+        cat = "Paladin",
+        chance = 65,
+        selfCast = false,
+        mode = "friend",
+        messages = {
+            "Licht schütze {name}!",
+            "Das Licht schütze {name}!",
+            "{name} sei geschützt durch die Macht des Lichts!",
+        },
+    },
+    ["Siegel des Furors"] = {
+        cat = "Paladin",
+        chance = 15,
+        selfCast = true,
+        messages = {
+            "Dies sei meine Anklage, {name}!",
+            "Höre meine Anklage, {name}!",
+            "Stelle dich deinem Ankläger, {name}!",
+            "Ich klage dich an, {name}, im Namen des Lichts!",
+        },
+    },
     ["Siegel des Kreuzfahrers"] = {
         cat = "Paladin",
         chance = 5,
         selfCast = true,
         messages = {
             "Im Namen des Lichts!",
-            "Für die Allianz!",
             "Das Licht ist mit mir!",
-            "Licht, Stärke deinen Diener!",
+            "Licht, gib' mir Kraft!",
+            "Licht, schenke mir Kraft!",
             "Licht, führe meine Hand!",
             "Licht, leite meine Hand!",
             "Licht, erleuchte meinen Pfad!",
+        },
+    },
+    ["Zorn der Gerechtigkeit"] = {
+        cat = "Paladin",
+        chance = 90,
+        selfCast = true,
+        messages = {
+            "Das Licht ist mit den Gerechten!",
+            "Die gerechten mögen im Licht erstrahlen!",
+            "Die gerechten Wandeln im Licht!",
         },
     },
     ["Siegel der Rechtschaffenheit"] = {
@@ -822,7 +857,7 @@ RPProc_SeedData = {
         selfCast = true,
         messages = {
             "Das Licht ist mit den Rechtschaffenden!",
-            "Den rechtschaffenden möge das Licht erstrahlen!",
+            "Die rechtschaffenden mögen im Licht erstrahlen!",
             "Die rechtschaffenden Wandeln im Licht!",
         },
     },
