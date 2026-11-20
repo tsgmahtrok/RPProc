@@ -324,6 +324,7 @@ local function RefreshDetail()
         widgets.tglPetReq:Hide()
         widgets.tglPetFor:Hide()
         widgets.tglAllowDead:Hide()
+        widgets.tglNoAnimals:Hide()
         widgets.spellLbl:Hide()
         widgets.spellBox:Hide()
         widgets.langLbl:Hide()
@@ -349,6 +350,7 @@ local function RefreshDetail()
     widgets.tglPetReq:Show()
     widgets.tglPetFor:Show()
     widgets.tglAllowDead:Show()
+    widgets.tglNoAnimals:Show()
     widgets.spellLbl:Show()
     widgets.spellBox:Show()
     widgets.langLbl:Show()
@@ -376,6 +378,7 @@ local function RefreshDetail()
     widgets.tglPetReq:SetText(TglText(set.petRequired == true, "Nur mit Pet aktiv"))
     widgets.tglPetFor:SetText(TglText(set.petForbidden == true, "Nur ohne Pet"))
     widgets.tglAllowDead:SetText(TglText(set.allowDead == true, "Auch tote Ziele"))
+    widgets.tglNoAnimals:SetText(TglText(set.excludeAnimals == true, "Keine Wildtiere"))
 
     if not widgets.spellBox:HasFocus() then
         if set.spell == false then
@@ -790,6 +793,10 @@ local function BuildFrame()
     AddTip(widgets.tglAllowDead, "Auch tote Ziele",
         "Sprüche lösen aus, wenn das anvisierte Ziel tot ist - Standardmässig schweigen Sets für Tote.",
         "Beispiel: Auferstehung: 'Geh noch nicht ins Licht, {name}.'")
+    widgets.tglNoAnimals = MakeButton(frame, "", 160, 400, -176, function() ToggleField("excludeAnimals") end, "LEFT")
+    AddTip(widgets.tglNoAnimals, "Keine Wildtiere",
+        "Sprüche lösen nicht aus, wenn das Ziel ein Wildtier ist (Engine 2.9.3+: excludeAnimals). Wildtiere handeln nicht aus freiem Willen und können z.B. nicht 'im Namen des Lichts' angeklagt werden. Ist der Kreature-Typ nicht lesbar, schweigt das Set ebenfalls (fail-safe).",
+        "Beispiel: Siegel des Furors: Anklage nur gegen willenstragende Ziele, nicht gegen Eisgrizzly.")
 
     -- spell + language
     widgets.spellLbl = MakeLabel(frame, "Spell ID:", 570, -128)

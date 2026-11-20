@@ -21,7 +21,7 @@
     Platzhalter: {name} = Zielname, {me} = dein Name.
 =========================================================================]]--
 
-RPProc_DataVersion = "2026-11-16" -- /run print(RPProc_DataVersion) zum Pruefen
+RPProc_DataVersion = "2026-11-20e" -- /run print(RPProc_DataVersion) zum Pruefen
 
 RPProc_SeedData = {
     -- << General >>
@@ -430,6 +430,7 @@ RPProc_SeedData = {
         chance = 25,
         selfCast = false,
         mode = "enemy",
+        excludeAnimals = true,
         messages = {
             "Au! Gib mir das!",
             "Her damit!",
@@ -453,6 +454,7 @@ RPProc_SeedData = {
         cat = "Krieger",
         chance = 10,
         selfCast = false,
+        excludeAnimals = true,
         messages = {
             "Nimm das, {name}!",
             "Ich halbier' dich, {name}!",
@@ -494,6 +496,7 @@ RPProc_SeedData = {
         chance = 5,
         selfCast = false,
         mode = "enemy",
+        excludeAnimals = true,
         messages = {
             "Die Rüstung ist schwach, hier..., und hier!",
             "Die Rüstung ist schwach unter den Achseln!",
@@ -718,6 +721,7 @@ RPProc_SeedData = {
         chance = 15,
         selfCast = false,
         mode = "enemy",
+        excludeAnimals = true,
         messages = {
             "Die Macht des Lichts treffe dich, {name}!",
             "Das Licht treffe dich, {name}!",
@@ -741,6 +745,7 @@ RPProc_SeedData = {
         chance = 10,
         selfCast = false,
         mode = "enemy",
+        excludeAnimals = true,
         messages = {
             "Das Licht wird dich richten, {name}!",
             "Empfange dein Urteil, {name}!",
@@ -821,6 +826,7 @@ RPProc_SeedData = {
         chance = 15,
         selfCast = false,
         mode = "enemy",
+        excludeAnimals = true,
         messages = {
             "Dies sei meine Anklage, {name}!",
             "Höre meine Anklage, {name}!",

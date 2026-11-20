@@ -86,7 +86,7 @@
       /rpp langtest 5          -- Sprach-ID testen: sendet SAY in dieser Sprache
 =========================================================================]]--
 
-RPProc_Version = "2.9-SecretValueFix" -- /run print(RPProc_Version) zum Pruefen
+RPProc_Version = "2.9.3-ExcludeAnimals" -- /run print(RPProc_Version) zum Pruefen
 -- Daten-File: /run print(RPProc_DataVersion) zeigt die Seed-Version an
 
 ---------------------------------------------------------------------
@@ -247,6 +247,24 @@ local function RPProc_Impl(setName, chance, forceUnit, channel, language)
                 RPProc_Debug("mode=friend, aber Ziel ist feindlich"); return end
         else
             if UnitIsUnit(u, "player") then RPProc_Debug("Ziel = Spieler selbst, nicht erlaubt ohne selfCast"); return end
+        end
+    end
+
+    -- -0.9) excludeAnimals: RP-Filter, pro Set optional excludeAnimals = true.
+    --     Wildtiere handeln nicht aus freiem Willen und koennen nicht
+    --     "im Namen des Lichts" angeklagt werden. Blockt Procs, wenn das
+    --     Ziel ein Wildtier ist. Fail-safe: Ist der Kreature-Typ nicht
+    --     lesbar (Secret-Value etc.), wird der Proc ebenfalls geblockt
+    --     (lieber schweigen als Unschuldige beschuldigen).
+    --     Typ-String ist lokalisiert, deutscher Client: "Wildtier".
+    --     Pruefen mit: /run print(UnitCreatureType("target"))
+    if set.excludeAnimals then
+        local ct = RPProc_SafeCall(UnitCreatureType, u)
+        local isAnimal = RPProc_SafeCall(function(v) return v == "Wildtier" end, ct)
+        if isAnimal ~= false then
+            RPProc_Debug("excludeAnimals: Zieltyp '" .. tostring(ct)
+                .. "' (nil = nicht lesbar) -> kein Proc")
+            return
         end
     end
 
