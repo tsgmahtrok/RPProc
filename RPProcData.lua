@@ -43,9 +43,10 @@ RPProc_SeedData = {
         chance = 90,
         selfCast = true,
         messages = {
-            "Ich glaube, ..ich rieche Erz!",
-            "Irgendwo hier müsste Erz zu finden sein!",
-            "Ich rieche, ..Erz!",
+            "Ich glaube, ..ich rieche Erz.",
+            "Irgendwo hier müsste Erz zu finden sein.",
+            "Um Erz zu finden, muss man nur den Spuren folgen.",
+            "Ich kann Erz riechen.",
         },
     },
     ["Kräutersuche"] = {
@@ -53,10 +54,11 @@ RPProc_SeedData = {
         chance = 90,
         selfCast = true,
         messages = {
-            "In dieser Gegend soll es seltene Pflanzen geben.",
-            "Ich achte besonders auf seltene Pflanzen.",
-            "Ich hab' ein Näschen für seltene Pflanzen.",
-            "Ich halte immer die Augen auf, nach besonders seltenen Pflanzen.",
+            "In dieser Gegend soll es seltene Kräutern geben.",
+            "Ich achte besonders auf seltene Kräutern.",
+            "Ich hab' ein Näschen für seltene Kräutern.",
+            "Die guten von den schlechten Kräutern zu unterscheiden, das ist die Kunst.",
+            "Ich halte immer die Augen auf, nach besonders seltenen Kräutern.",
         },
     },
     ["Steingestalt"] = {
