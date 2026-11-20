@@ -1188,6 +1188,16 @@ RPProc_SeedData = {
             "Elemente des Wassers, segnet diese Waffe!",
         },
     },
+	["Wasserschild"] = {
+        cat = "Schamane",
+        chance = 5,
+        selfCast = true,
+        messages = {
+            "Ihr Elemente des Wassers, ich rufe euch!",
+            "Das Wasser umgibt mich!",
+            "Wasser ist Leben!",
+        },
+    },
 	
 
     -- << Schurke >>
