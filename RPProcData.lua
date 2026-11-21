@@ -576,7 +576,7 @@ RPProc_SeedData = {
             "Für Eisenschmiede und den Großkönig!",
             "Für den Großkönig!",
             "Für Magni und die Bronzebärte!",
-            "In's Gefecht, für Magni und die Bronzebärte!",
+            "Ins Gefecht, für Magni und die Bronzebärte!",
         },
     },
     ["Siegesrausch"] = {
@@ -895,7 +895,7 @@ RPProc_SeedData = {
         messages = {
             "Das könnte etwas kitzeln, {name}.",
             "Das Licht bringt neue Kraft, {name}.",
-            "Licht, erneuere {name}'s Kräfte.",
+            "Licht, erneuere {name}s Kräfte.",
         },
     },
     ["Geringes Heilen"] = {
@@ -1046,7 +1046,7 @@ RPProc_SeedData = {
         mode = "enemy",
         excludeAnimals = true,
         messages = {
-            "Ihr Geister der Winde, wirkt durch meine Hand!",
+            "Ihr Geister der Wasser und Winde, wirkt durch meine Hand!",
         },
     },
     ["Geisterwolf"] = {
@@ -1079,7 +1079,7 @@ RPProc_SeedData = {
         messages = {
             "Ihr Geister des Flusses, schenkt {name} Heilung.",
             "Ihr Geister des Flusses, helft {name} zu heilen.",
-            "Ihr Geister des Flusses, wascht dem Schmerz von {name}.",
+            "Ihr Geister des Flusses, wascht den Schmerz von {name}.",
             "Ich rufe euch an, Geister des Flusses, heilt {name}.",
             "Ich rufe euch an, Geister des Flusses, erhört mein Gebet.",
             "Erhört mein Gebet, Geister des Flusses, schenkt {name} Heilung.",
@@ -1091,12 +1091,12 @@ RPProc_SeedData = {
         selfCast = false,
         mode = "friend",
         messages = {
-            "Hört mich an, ihr Geister der Wasser, und lindert {name}'s Leid.",
+            "Hört mich an, ihr Geister der Wasser, und lindert {name}s Leid.",
             "Hört mich an, ihr Geister der Wasser, und wascht die Krankheit von {name}.",
-            "Hört mich an, ihr Geister der Wasser, und wascht Krankheit und Leid von {name}'s Körper.",
+            "Hört mich an, ihr Geister der Wasser, und wascht Krankheit und Leid von {name}s Körper.",
             "Ihr Geister der Wasser, wascht das Leid von {name}.",
             "Ihr Geister der Wasser, wascht den Schmerz von {name}.",
-            "Ihr Geister der Wasser, reinigt {name}'s Körper von Krankheit und Leid.",
+            "Ihr Geister der Wasser, reinigt {name}s Körper von Krankheit und Leid.",
         },
     },
     ["Ruf der Elemente"] = {
@@ -1119,7 +1119,7 @@ RPProc_SeedData = {
         messages = {
             "Ihr Geister der Meere, schenkt {name} Heilung.",
             "Ihr Geister der Meere, helft {name} zu heilen.",
-            "Ihr Geister der Meere, wascht dem Schmerz von {name}.",
+            "Ihr Geister der Meere, wascht den Schmerz von {name}.",
             "Ich rufe euch an, Geister der Meere, heilt {name}.",
             "Ich rufe euch an, Geister der Meere, erhört mein Gebet.",
             "Erhört mein Gebet, Geister der Meere, schenkt {name} Heilung.",
@@ -1131,10 +1131,10 @@ RPProc_SeedData = {
         selfCast = false,
         mode = "friend",
         messages = {
-            "Ihr Geister der Wasser, wascht das Gift aus {name}'s Körper.",
-            "Ihr Geister der Wasser, reinigt {name}'s Körper von Gift und Tod.",
+            "Ihr Geister der Wasser, wascht das Gift aus {name}s Körper.",
+            "Ihr Geister der Wasser, reinigt {name}s Körper von Gift und Tod.",
             "Erhört mein Gebet, Geister der Wasser, und reinigt {name} von Gift und Tod.",
-            "Hört meinen Ruf, Geister der Wasser, und vertreibt Gift und Tod aus {name}'s Körper.",
+            "Hört meinen Ruf, Geister der Wasser, und vertreibt Gift und Tod aus {name}s Körper.",
         },
     },
     ["Wasseratmung"] = {
@@ -1172,8 +1172,8 @@ RPProc_SeedData = {
         chance = 35,
         selfCast = true,
         messages = {
-            "Geister der Wasser, segnet diese Waffe mit eurer Macht!",
-            "Ihr Geister der Wasser, erfüllt diese Waffe mit eurer Macht!",
+            "Geister der Wasser und Winde, segnet diese Waffe mit eurer Macht!",
+            "Ihr Geister der Wasser und Winde, erfüllt diese Waffe mit eurer Macht!",
         },
     },
 	["Wasserschild"] = {
