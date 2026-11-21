@@ -929,10 +929,11 @@ RPProc_SeedData = {
         mode = "friend",
         allowDead = true,
         messages = {
-            "Geh noch nicht ins Licht, {name}.",
-            "Das Licht möge deine Seele erneuern, {name}.",
-            "Licht, vertreibe den Schatten und rette {name}.",
-            "Nicht so schnell {name}, du bist mit diesem Leben noch nicht fertig.",
+            "Geh' noch nicht in die Finsternis, {name}, folge meiner Stimme zurück.",
+            "Licht, vertreibe die Finsternis und zeige {name} den Weg zurück!",
+            "Gib' nicht so schnell auf, {name}, du bist in diesem Leben noch nicht fertig.",
+			"Geh' nicht allein in die Finsternis, {name}. Komm' zurück ins Licht!",
+			"Sieh' mich, {name}, und folge meiner Stimme zurück ins Licht!",
         },
     },
     ["Erneuerung"] = {
@@ -941,7 +942,6 @@ RPProc_SeedData = {
         selfCast = false,
         mode = "friend",
         messages = {
-            "Das könnte etwas kitzeln, {name}.",
             "Das Licht bringt neue Kraft, {name}.",
             "Licht, erneuere {name}s Kräfte.",
         },
@@ -959,6 +959,7 @@ RPProc_SeedData = {
             "Halte durch, {name}, die Gebete sind mit dir.",
             "Licht!",
             "Licht, gib mir Kraft!",
+			"Licht, sieh' {name} gnädig an.",
         },
     },
     ["Großes Heilen"] = {
@@ -967,6 +968,7 @@ RPProc_SeedData = {
         selfCast = false,
         mode = "friend",
         messages = {
+			"Ich bin bei dir, {name}.",
             "Das Licht bringt Heilung, {name}.",
             "Licht heile, {name}.",
             "Ich bete für deine Genesung, {name}.",
@@ -981,9 +983,12 @@ RPProc_SeedData = {
         chance = 15,
         selfCast = false,
         mode = "enemy",
+        excludeAnimals = true,
         messages = {
-            "Spüre den Zorn des Lichts, {name}!",
-            "Das Licht strafe dich, {name}!",
+			"Ich weiche dir nicht.",
+			"Weiche Finsternis, empfange das Licht!",
+			"Dem Licht kannst du nicht entgehen. Mir auch nicht.",
+			"Ich scheue dich nicht, {name}.",
         },
     },
     ["Heilen"] = {
@@ -992,6 +997,7 @@ RPProc_SeedData = {
         selfCast = false,
         mode = "friend",
         messages = {
+			"Das Licht kennt deinen Namen, {name}.",
             "Das Licht bringt Heilung, {name}.",
             "Licht heile, {name}.",
             "Gleich fühlst du dich besser, {name}.",
@@ -1018,6 +1024,8 @@ RPProc_SeedData = {
         messages = {
             "Das Licht sei dein Schild, {name}.",
             "Das Licht beschützt, {name}.",
+			"Ich hülle dich in mein Gebet, {name}.",
+			"Sicher hinter meinem Wort, {name}.",
         },
     },
     ["Machtwort: Seelenstärke"] = {
@@ -1027,11 +1035,14 @@ RPProc_SeedData = {
         mode = "friend",
         messages = {
             "Wandel im Segen des Lichts, {name}.",
+            "Sei stark im Licht, {name}.",
+            "Erstrahle im Licht, {name}.",
             "Licht, segne {name}.",
             "Möge das Licht dich begleiten, {name}.",
             "Ein Segen für dich, {name}.",
             "Möge das Licht deine Pfade erleuchten, {name}.",
-            "Das Licht gibt dir Kraft, {name}.",
+            "Das Licht gebe dir Kraft, {name}.",
+			"Geh' mit leichtem Herzen, {name}.",
         },
     },
     ["Schattenwort: Schmerz"] = {
@@ -1039,8 +1050,10 @@ RPProc_SeedData = {
         chance = 15,
         selfCast = false,
         mode = "enemy",
+        excludeAnimals = true,
         messages = {
             "Dein Wort sei 'Schmerz'",
+			"Ich spreche es aus, und es geschieht: Schmerz.",
             "Der Schatten bringt 'Schmerz'",
             "Sprich das Wort und es sei 'Schmerz'",
             "Deine Strafe sei 'Schmerz', {name}.",
@@ -1101,6 +1114,8 @@ RPProc_SeedData = {
         excludeAnimals = true,
         messages = {
             "Ihr Geister der Wasser und Winde, wirkt durch meine Hand!",
+            "Geister der Wasser und Winde, akzeptiert meine Führung!",
+            "Geister der Wasser und Winde, erhört meinen Ruf!",
         },
     },
     ["Geisterwolf"] = {
@@ -1108,7 +1123,9 @@ RPProc_SeedData = {
         chance = 30,
         selfCast = true,
         messages = {
-            "Ihr Geister der Ahnen, schenkt mir die Kraft des Wolfes!",
+            "Geist des großen Wolfs, leih' mir deine Kraft!",
+            "Großer Wolf, schenk' mir deine Kraft!",
+            "Ich rufe dich an, Großer Wolf, leih' mir deine Kraft!",
         },
     },
     ["Geist der Ahnen"] = {
