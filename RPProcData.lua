@@ -54,9 +54,9 @@ RPProc_SeedData = {
         chance = 90,
         selfCast = true,
         messages = {
-            "In dieser Gegend soll es seltene Kräutern geben.",
-            "Ich achte besonders auf seltene Kräutern.",
-            "Ich hab' ein Näschen für seltene Kräutern.",
+            "In dieser Gegend soll es seltene Kräuter geben.",
+            "Ich achte besonders auf seltene Kräuter.",
+            "Ich hab' ein Näschen für seltene Kräuter.",
             "Die guten von den schlechten Kräutern zu unterscheiden, das ist die Kunst.",
             "Ich halte immer die Augen auf, nach besonders seltenen Kräutern.",
         },
@@ -1001,6 +1001,15 @@ RPProc_SeedData = {
     },
 
     -- << Schamane >>
+    ["Blitzschlag"] = {
+        cat = "Schamane",
+        chance = 10,
+        selfCast = false,
+        mode = "enemy",
+        messages = {
+            "Spüre den Sturm!",
+        },
+    },
     ["Blitzschlagschild"] = {
         cat = "Schamane",
         chance = 35,
@@ -1195,6 +1204,7 @@ RPProc_SeedData = {
         messages = {
             "Ihr Elemente des Wassers, ich rufe euch!",
             "Das Wasser umgibt mich!",
+            "Die Wasser der Welt umgeben mich!",
             "Wasser ist Leben!",
         },
     },
