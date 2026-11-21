@@ -723,16 +723,15 @@ RPProc_SeedData = {
     },
     ["Heiliges Licht"] = {
         cat = "Paladin",
-        chance = 10,
+        chance = 5,
         selfCast = false,
         mode = "friend",
         messages = {
-            "Das Licht bringt euch Heilung, {name}.",
-            "Licht heile, {name}.",
-            "Halte durch, {name}, das Licht ist mit dir.",
-            "Licht, errette {name}!",
+            "Das Licht erfülle euch mit neuer Kraft, {name}.",
+            "Licht erfülle {name} mit deiner Kraft.",
+            "Haltet durch, {name}, das Licht ist mit euch.",
             "Licht, steh' {name} bei!",
-            "Licht, gib' {name} Kraft!",
+            "Licht, schenk' {name} Kraft!",
         },
     },
     ["Heiliger Stoß"] = {
@@ -745,6 +744,7 @@ RPProc_SeedData = {
             "Die Macht des Lichts treffe dich, {name}!",
             "Das Licht treffe dich, {name}!",
             "Spüre die ganze Macht des Lichts, {name}!",
+            "Ich bin Licht, ich bin Vergeltung!",
         },
     },
     ["Läutern"] = {
@@ -758,7 +758,7 @@ RPProc_SeedData = {
             "Licht, erlöse {name} von Krankheit und Leid.",
             "Licht, reinige {name}s Körper von Krankheit und Leid.",
             "Krankheit und Gifte seien gebannt, {name}.",
-            "Sei gereinigt, {name}, im Names des Lichts.",
+            "Sei gereinigt, {name}, im Namen des Lichts.",
             "Im Glanz' des Lichts bestehen weder Krankheit noch Gift, {name}.",
             "Wer im Licht wandelt, fürchte weder Krankheit noch Gift, {name}.",
             "Wer da wandelt im Licht, fürchte weder Krankheit noch Gift, {name}.",
@@ -766,13 +766,13 @@ RPProc_SeedData = {
     },
     ["Lichtblitz"] = {
         cat = "Paladin",
-        chance = 10,
+        chance = 5,
         selfCast = false,
         mode = "friend",
         messages = {
             "Das Licht ist mit euch, {name}.",
-            "Licht!",
-            "Licht, steh mir bei!",
+            "Licht, steh' {name} bei!",
+			"Licht!",
         },
     },
     ["Richturteil"] = {
