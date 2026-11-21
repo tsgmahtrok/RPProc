@@ -678,6 +678,23 @@ RPProc_SeedData = {
     -- << Magier >>
 
     -- << Paladin >>
+    ["Erlösung"] = {
+        cat = "Paladin",
+        chance = 60,
+        selfCast = false,
+        mode = "friend",
+        messages = {
+            "Licht, vertreibe Dunkelheit und Tod, auf das {name} erneut das Licht sehen möge!",
+            "Licht, erlöse {name}, von Dunkelheit und Tod!",
+            "Ich erlöse deine Seele, {name}, von Dunkelheit und Tod!",
+            "Geh' noch nicht ins Dunkel, {name}, dein Pfad ist noch nicht zu Ende!",
+            "Steh' auf, {name}, und wandere erneut im Licht!",
+            "Die da wandeln im Licht sollen nicht fürchten die Dunkelheit, {name}, steh' auf!",
+            "Ich banne die Dunkelheit, {name}, sehe erneut ins Licht!",
+            "Ich erlöse dich, {name} von Dunkelheit und Tod, Steh' auf!",
+            "Dein Weg ist noch nicht zu Ende, {name}, ersteh' im Glanz eines neuen Tages!",
+        },
+    },
     ["Göttlicher Schutz"] = {
         cat = "Paladin",
         chance = 90,
@@ -711,13 +728,12 @@ RPProc_SeedData = {
         selfCast = false,
         mode = "friend",
         messages = {
-            "Das Licht bringt Heilung, {name}.",
+            "Das Licht bringt euch Heilung, {name}.",
             "Licht heile, {name}.",
-            "Ich bete für deine Genesung, {name}.",
-            "Halte durch, {name}, die Gebete sind mit dir.",
-            "Licht!",
-            "Licht, steh mir bei!",
-            "Licht, gib mir Kraft!",
+            "Halte durch, {name}, das Licht ist mit dir.",
+            "Licht, errette {name}!",
+            "Licht, steh' {name} bei!",
+            "Licht, gib' {name} Kraft!",
         },
     },
     ["Heiliger Stoß"] = {
@@ -734,14 +750,30 @@ RPProc_SeedData = {
     },
     ["Läutern"] = {
         cat = "Paladin",
-        chance = 15,
+        chance = 10,
         selfCast = false,
         mode = "friend",
         messages = {
-            "Das Licht befreie dich von deinem Leid, {name}.",
-            "Licht läutere, {name} von körperlichem Leid.",
-            "Ich bete für deine rasche Läuterung, {name}.",
-            "Krankheit und Gift seien gebannt, {name}.",
+            "Das Licht befreie dich von Krankheit und Leid, {name}.",
+            "Das Licht erlöse dich von Krankheit und Leid, {name}.",
+            "Licht, erlöse {name} von Krankheit und Leid.",
+            "Licht, reinige {name}s Körper von Krankheit und Leid.",
+            "Krankheit und Gifte seien gebannt, {name}.",
+            "Sei gereinigt, {name}, im Names des Lichts.",
+            "Im Glanz' des Lichts bestehen weder Krankheit noch Gift, {name}.",
+            "Wer im Licht wandelt, fürchte weder Krankheit noch Gift, {name}.",
+            "Wer da wandelt im Licht, fürchte weder Krankheit noch Gift, {name}.",
+        },
+    },
+    ["Lichtblitz"] = {
+        cat = "Paladin",
+        chance = 10,
+        selfCast = false,
+        mode = "friend",
+        messages = {
+            "Das Licht ist mit euch, {name}.",
+            "Licht!",
+            "Licht, steh mir bei!",
         },
     },
     ["Richturteil"] = {
@@ -752,11 +784,10 @@ RPProc_SeedData = {
         excludeAnimals = true,
         messages = {
             "Das Licht wird dich richten, {name}!",
-            "Empfange dein Urteil, {name}!",
             "Empfange deinen Richtsspruch, {name}!",
             "Das Licht wird über dein Urteil befinden, {name}!",
             "Stelle dich deinem Urteil, {name}!",
-            "Ich bin gekommen, dich zu richten, {name}!",
+            "Ich bin gekommen, dich zu richten, {name}, im Namen des Lichts!",
         },
     },
     ["Segen der Macht"] = {
@@ -765,11 +796,12 @@ RPProc_SeedData = {
         selfCast = false,
         mode = "friend",
         messages = {
-            "Ich segne dich, {name}, mit der Macht des Lichts, missbrauche sie nicht.",
+            "Ich segne dich, {name}, mit der Macht des Lichts, mißbrauche sie nicht.",
             "Der Segen der Macht, {name}, nutze sie Weise.",
-            "Licht, gib {name} die Macht.",
+            "Licht, erfülle {name} mit deiner Macht.",
             "Licht, segne {name} mit deiner Macht.",
-            "Segne {name} mit der Macht des Lichts.",
+            "Ich segne {name} mit der Macht des Lichts.",
+            "Die da wandeln im Licht, seien erfüllt von seiner Macht, {name}.",
             "Das Licht gebe dir Macht, {name}, setze sie Weise ein.",
         },
     },
@@ -779,12 +811,14 @@ RPProc_SeedData = {
         selfCast = false,
         mode = "friend",
         messages = {
+            "Die da wandeln im Licht, seien erfüllt von seiner Weisheit, {name}.",
             "Ich segne dich, {name}, mit der Weisheit des Lichts.",
             "{name}, empfange den Segen der Weisheit.",
-            "Der Segen der Weisheit, {name}.",
-            "Licht, gib {name} die Weisheit.",
-            "Segne {name} mit der Weisheit des Lichts.",
-            "Licht segne {name} mit Weisheit.",
+            "Der Segen der Weisheit, {name}, möge sie deine Schritte lenken.",
+            "Licht, schenke {name} deine Weisheit.",
+            "Ich segne {name} mit der Weisheit des Lichts.",
+            "Licht, segne {name} mit Weisheit.",
+            "Licht, schenke {name} deine Weisheit.",
             "Das Licht gebe dir Weisheit, {name}.",
             "Das Licht schenke dir Weisheit, {name}.",
         },
@@ -1009,6 +1043,8 @@ RPProc_SeedData = {
         excludeAnimals = true,
         messages = {
             "Ihr Geister des Sturms, wirkt durch meine Hand!",
+            "Geister des Sturms, akzeptiert meine Führung!",
+            "Geister des Sturms, erhört meinen Ruf!",
         },
     },
     ["Blitzschlagschild"] = {
@@ -1027,6 +1063,8 @@ RPProc_SeedData = {
         excludeAnimals = true,
         messages = {
             "Ihr Geister der Erde, wirkt durch meine Hand!",
+            "Geister der Erde, akzeptiert meine Führung!",
+            "Geister der Erde, erhört meinen Ruf!",
         },
     },
     ["Flammenschock"] = {
@@ -1037,6 +1075,8 @@ RPProc_SeedData = {
         excludeAnimals = true,
         messages = {
             "Ihr Geister der Flamme, wirkt durch meine Hand!",
+            "Geister der Flamme, akzeptiert meine Führung!",
+            "Geister der Flamme, erhört meinen Ruf!",
         },
     },
     ["Frostschock"] = {
