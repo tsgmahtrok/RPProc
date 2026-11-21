@@ -732,7 +732,7 @@ RPProc_SeedData = {
             "Haltet durch, {name}, das Licht ist mit euch!",
             "Das Licht ist mit euch, {name}!",
             "Licht, schenke {name} neue Kraft!",
-            "Fürchte nicht die Finternis, {name}, das Licht ist mit dir!",
+            "Fürchte nicht die Finsternis, {name}, das Licht ist mit dir!",
         },
     },
     ["Heiliger Stoß"] = {
@@ -773,8 +773,13 @@ RPProc_SeedData = {
         messages = {
             "Ich bin das Licht!",
             "Das Licht ist mit mir.",
+            "Das Licht ist in mir.",
             "Licht, steh' mir bei!",
 			"Licht, gib' mir Kraft!",
+			"Im Namen des Lichts!",
+			"Licht!",
+			"Gib' mir Kraft!",
+			"Gib' mir Kraft!",
         },
     },
     ["Richturteil"] = {
@@ -787,9 +792,9 @@ RPProc_SeedData = {
             "Ich bin Licht, ich bin Gerechtigkeit!",
             "Das Licht wird dich richten, {name}!",
             "Empfange deinen Richtsspruch, {name}!",
-            "Das Licht wird über dich befinden, {name}!",
+            "Das Licht wird über dein Urteil befinden, {name}!",
             "Stelle dich deinem Urteil, {name}!",
-            "Ich bin gekommen, dich zu richten, {name}, im Namen des Lichts!",
+            "Ich bin gekommen dich zu richten, {name}, im Namen des Lichts!",
         },
     },
     ["Segen der Macht"] = {
@@ -805,6 +810,9 @@ RPProc_SeedData = {
             "Ich segne {name} mit der Macht des Lichts.",
             "Die da wandeln im Licht, seien erfüllt von seiner Macht, {name}.",
             "Das Licht gebe dir Macht, {name}, setze sie Weise ein.",
+            "Die Gerechten sollen Macht erfahren, {name}.",
+            "Die Macht sei mit den Gerechten, {name}.",
+            "Die Macht sei mit den Rechtschaffenden, {name}.",
         },
     },
     ["Segen der Weisheit"] = {
@@ -900,6 +908,7 @@ RPProc_SeedData = {
             "Ich bin das Licht, ich bin der Zorn der Gerechten!",
             "Das Licht ist mit den Gerechten!",
             "Die Gerechten mögen im Licht erstrahlen!",
+            "Ich bin das Licht, ich bin der Zorn!",
         },
     },
     ["Siegel der Rechtschaffenheit"] = {
