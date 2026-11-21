@@ -728,10 +728,11 @@ RPProc_SeedData = {
         mode = "friend",
         messages = {
             "Das Licht erfülle euch mit neuer Kraft, {name}.",
-            "Licht erfülle {name} mit deiner Kraft.",
-            "Haltet durch, {name}, das Licht ist mit euch.",
-            "Licht, steh' {name} bei!",
-            "Licht, schenk' {name} Kraft!",
+            "Licht, erfülle {name} mit deiner Kraft!",
+            "Haltet durch, {name}, das Licht ist mit euch!",
+            "Das Licht ist mit euch, {name}!",
+            "Licht, schenke {name} neue Kraft!",
+            "Fürchte nicht die Finternis, {name}, das Licht ist mit dir!",
         },
     },
     ["Heiliger Stoß"] = {
@@ -770,9 +771,10 @@ RPProc_SeedData = {
         selfCast = false,
         mode = "friend",
         messages = {
-            "Das Licht ist mit euch, {name}.",
-            "Licht, steh' {name} bei!",
-			"Licht!",
+            "Ich bin das Licht!",
+            "Das Licht ist mit mir.",
+            "Licht, steh' mir bei!",
+			"Licht, gib' mir Kraft!",
         },
     },
     ["Richturteil"] = {
@@ -782,9 +784,10 @@ RPProc_SeedData = {
         mode = "enemy",
         excludeAnimals = true,
         messages = {
+            "Ich bin Licht, ich bin Gerechtigkeit!",
             "Das Licht wird dich richten, {name}!",
             "Empfange deinen Richtsspruch, {name}!",
-            "Das Licht wird über dein Urteil befinden, {name}!",
+            "Das Licht wird über dich befinden, {name}!",
             "Stelle dich deinem Urteil, {name}!",
             "Ich bin gekommen, dich zu richten, {name}, im Namen des Lichts!",
         },
@@ -845,6 +848,9 @@ RPProc_SeedData = {
             "Licht segne {name} und errette seine Seele.",
             "Das Licht errette dich, {name}.",
             "Empfange Rettung, {name}, durch die Kraft des Lichts.",
+            "Wandele in Licht und sei Frei, {name}.",
+            "Das Licht macht Frei, {name}.",
+            "Die da wandeln im Licht seien Frei, {name}.",
         },
     },
     ["Segen des Schutzes"] = {
@@ -853,7 +859,7 @@ RPProc_SeedData = {
         selfCast = false,
         mode = "friend",
         messages = {
-            "Licht schütze {name}!",
+            "Licht, beschütze {name}!",
             "Das Licht schütze {name}!",
             "{name} sei geschützt durch die Macht des Lichts!",
         },
@@ -876,6 +882,7 @@ RPProc_SeedData = {
         chance = 5,
         selfCast = true,
         messages = {
+            "Ich bin das Licht!",
             "Im Namen des Lichts!",
             "Das Licht ist mit mir!",
             "Licht, gib' mir Kraft!",
@@ -890,9 +897,9 @@ RPProc_SeedData = {
         chance = 90,
         selfCast = true,
         messages = {
+            "Ich bin das Licht, ich bin der Zorn der Gerechten!",
             "Das Licht ist mit den Gerechten!",
-            "Die gerechten mögen im Licht erstrahlen!",
-            "Die gerechten Wandeln im Licht!",
+            "Die Gerechten mögen im Licht erstrahlen!",
         },
     },
     ["Siegel der Rechtschaffenheit"] = {
