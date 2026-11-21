@@ -713,6 +713,8 @@ RPProc_SeedData = {
         mode = "enemy",
         excludeAnimals = true,
         messages = {
+            "Ihr könnt' nicht vorbei!",
+            "Hier kommt der Hammer!",
             "Haltet ein!",
             "Haltet ein, im Namen des Lichts!",
             "Haltet ein, {name}!",
@@ -779,7 +781,7 @@ RPProc_SeedData = {
 			"Im Namen des Lichts!",
 			"Licht!",
 			"Gib' mir Kraft!",
-			"Gib' mir Kraft!",
+			"Kraft des Lichts!",
         },
     },
     ["Richturteil"] = {
@@ -828,7 +830,6 @@ RPProc_SeedData = {
             "Licht, schenke {name} deine Weisheit.",
             "Ich segne {name} mit der Weisheit des Lichts.",
             "Licht, segne {name} mit Weisheit.",
-            "Licht, schenke {name} deine Weisheit.",
             "Das Licht gebe dir Weisheit, {name}.",
             "Das Licht schenke dir Weisheit, {name}.",
         },
@@ -892,9 +893,7 @@ RPProc_SeedData = {
         messages = {
             "Ich bin das Licht!",
             "Im Namen des Lichts!",
-            "Das Licht ist mit mir!",
-            "Licht, gib' mir Kraft!",
-            "Licht, schenke mir Kraft!",
+            "Ich fürchte nicht die Finsternis!",
             "Licht, führe meine Hand!",
             "Licht, leite meine Hand!",
             "Licht, erleuchte meinen Pfad!",
