@@ -1070,8 +1070,9 @@ RPProc_SeedData = {
         excludeAnimals = true,
         messages = {
             "Ihr Geister des Sturms, wirkt durch meine Hand!",
-            "Geister des Sturms, akzeptiert meine Führung!",
-            "Geister des Sturms, erhört meinen Ruf!",
+            "Geister des Sturms, folgt meinem Ruf!",
+            "Geister des Sturms, leiht mir eure Kraft!",
+            "Ich beschwöre euch, Geister des Sturms, wirkt durch meine Hand!",
         },
     },
     ["Blitzschlagschild"] = {
@@ -1079,7 +1080,9 @@ RPProc_SeedData = {
         chance = 25,
         selfCast = true,
         messages = {
-            "Ihr Geister des Sturms, schenkt mir eure Kraft!",
+            "Ihr Geister des Sturms, leiht mir eure Kraft!",
+            "Ich beschwöre euch, Geister des Sturms, stärkt meine Kraft!",
+            "Ich beschwöre euch, Geister des Sturms, gewährt mir euren Schutz!",
         },
     },
     ["Erdschock"] = {
@@ -1090,8 +1093,9 @@ RPProc_SeedData = {
         excludeAnimals = true,
         messages = {
             "Ihr Geister der Erde, wirkt durch meine Hand!",
-            "Geister der Erde, akzeptiert meine Führung!",
-            "Geister der Erde, erhört meinen Ruf!",
+            "Geister der Erde, folgt meinem Ruf!",
+            "Geister der Erde, leiht mir eure Kraft!",
+            "Ich beschwöre euch, Geister der Erde, wirkt durch meine Hand!",
         },
     },
     ["Flammenschock"] = {
@@ -1102,8 +1106,9 @@ RPProc_SeedData = {
         excludeAnimals = true,
         messages = {
             "Ihr Geister der Flamme, wirkt durch meine Hand!",
-            "Geister der Flamme, akzeptiert meine Führung!",
-            "Geister der Flamme, erhört meinen Ruf!",
+            "Geister der Flamme, folgt meinem Ruf!",
+            "Geister der Flamme, leiht mir eure Kraft!",
+            "Ich beschwöre euch, Geister der Flamme, wirkt durch meine Hand!",
         },
     },
     ["Frostschock"] = {
@@ -1114,8 +1119,9 @@ RPProc_SeedData = {
         excludeAnimals = true,
         messages = {
             "Ihr Geister der Wasser und Winde, wirkt durch meine Hand!",
-            "Geister der Wasser und Winde, akzeptiert meine Führung!",
-            "Geister der Wasser und Winde, erhört meinen Ruf!",
+            "Geister der Wasser und Winde, folgt meinem Ruf!",
+            "Geister der Wasser und Winde, leiht mir eure Kraft!",
+            "Ich beschwöre euch, Geister der Wasser und Winde, wirkt durch meine Hand!",
         },
     },
     ["Geisterwolf"] = {
