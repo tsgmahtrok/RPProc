@@ -700,11 +700,10 @@ RPProc_SeedData = {
         chance = 90,
         selfCast = true,
         messages = {
-            "Schutz des Lichts!",
-            "Licht, schütze mich!",
-            "Licht, schütze deinen Diener!",
-            "Licht! Spende mir deinen Schutz!",
-            "Der Schutz des Lichts!",
+            "Der da wandelt im Licht, soll nicht fürchten Dunkelheit und Tod!",
+            "Und ob ich schon wanderte den finsteren Pfad, fürchte ich keine Dunkelheit, denn das Licht wohnt in mir!",
+            "Der da folgt dem Pfad des Lichts, soll nicht fürchten die Finsternis!",
+            "Der da folgt dem Pfad der Rechtschaffenheit, sei erfüllt vom Licht!",
         },
     },
     ["Hammer der Gerechtigkeit"] = {
