@@ -738,8 +738,10 @@ RPProc_SeedData = {
         selfCast = false,
         mode = "friend",
         messages = {
-            "Noch nicht, {name}, im Name des Lichts!",
+            "Noch nicht, {name}, im Namen des Lichts!",
             "Halte Stand, {name}, im Namen des Lichts!",
+            "Bleib' standhaft, {name}, das Licht ist mit uns!",
+            "Wanke nicht, {name}, das Licht ist mit dir!",
         },
     },
     ["Heiliges Licht"] = {
@@ -828,16 +830,16 @@ RPProc_SeedData = {
         mode = "friend",
         messages = {
             "Ich segne dich, {name}, mit der Macht des Lichts, mißbrauche sie nicht.",
-            "Der Segen der Macht, {name}, nutze sie Weise.",
+            "Der Segen der Macht, {name}, nutze sie weise.",
             "Licht, erfülle {name} mit deiner Macht, mögest du nicht straucheln im Angesicht der Finsternis.",
             "Licht, segne {name} mit deiner Macht, mögest du standhaft sein, im Angesicht der Finsternis.",
             "Empfange den Segen der Macht des Lichts, {name}, fürchte keine Finsternis.",
             "Ich segne {name} mit der Macht des Lichts, mögest du standhaft sein, im Angesicht der Finsternis.",
             "Die da wandeln im Licht, seien erfüllt von seiner Macht, {name}.",
-            "Das Licht gebe dir Macht, {name}, setze sie Weise ein.",
+            "Das Licht gebe dir Macht, {name}, setze sie weise ein.",
             "Die Gerechten sollen die Macht des Lichts erfahren, {name}, doch mißbrauche sie nicht..",
             "Die Macht sei mit den Gerechten, {name}, und fürchte nicht die Finsternis.",
-            "Die Macht sei mit den Rechtschaffenden, {name}, setze sie Weise ein..",
+            "Die Macht sei mit den Rechtschaffenden, {name}, setze sie weise ein.",
         },
     },
     ["Segen der Weisheit"] = {
