@@ -43,7 +43,6 @@ RPProc_SeedData = {
         chance = 45,
         selfCast = true,
         messages = {
-            "Wenn man weiß worauf man achten muss, findet man auch, was man sucht.",
             "Man kann sehen, wie sich der Boden langsam verändert, nahe besonders wertvoller Erzadern.",
             "Wenn man den Spuren aufmerksam folgt, wird klar, wo man die Erzader findet.",
             "Um das wirklich wertvolle Erz zu finden, muss man nur aufmerksam den Spuren folgen.",
@@ -56,7 +55,7 @@ RPProc_SeedData = {
         chance = 45,
         selfCast = true,
         messages = {
-            "Wenn man weiß worauf man achten muss, findet man auch, was man sucht.",
+            "Wenn man weiß, was die Pflanzen mögen, findet man auch das Kraut, das man sucht.",
             "Ich acht' immer auf besonders seltene Kräuter.",
             "Ich hab' ein Näschen für besondere Kräuter.",
             "Wenn es um Kräuter geht, hab ich ein besonderes Näschen für Qualität.",
@@ -84,7 +83,7 @@ RPProc_SeedData = {
         chance = 45,
         selfCast = true,
         messages = {
-            "Wenn man weiß worauf man achten muss, findet man auch, was man sucht.",
+            "Ein Schatzsucher, der weiß, worauf er achten muss, braucht kein Glück — nur Geduld.",
             "Wo verstecken sich die Schätze?",
             "Ich glaube, ich rieche Reichtum..",
         },
@@ -203,7 +202,7 @@ RPProc_SeedData = {
         chance = 45,
         selfCast = true,
         messages = {
-            "Ich Suche nach den Spuren anderer Zweibeiner in der Gegend.",
+            "Ich suche nach den Spuren anderer Zweibeiner in der Gegend.",
             "Ich Folge den Spuren anderer Zweibeiner in der Gegend.",
             "Die Welt erzählt dir, wer auf ihr wandelt, du musst nur Zuhör'n.",
         },
@@ -325,9 +324,9 @@ RPProc_SeedData = {
         chance = 45,
         selfCast = true,
         messages = {
-            "Ich Suche nach Spuren untoter Monstrositäten in der Gegend.",
-            "Untote Monstrositäten hinterlassen ihre ganz eigenen Spuren, danach Suche ich.",
-            "Untote hinterlassen meist mehr Spuren, als nur den schlechten Geruch, so finde ich Sie.",
+            "Ich suche nach Spuren untoter Monstrositäten in der Gegend.",
+            "Untote Monstrositäten hinterlassen ihre ganz eigenen Spuren, danach suche ich.",
+            "Untote hinterlassen meist mehr Spuren, als nur den schlechten Geruch, so finde ich sie.",
             "Ich achte speziell auf die Spuren untoter Monstrositäten.",
         },
     },
@@ -348,9 +347,9 @@ RPProc_SeedData = {
         selfCast = true,
         messages = {
             "Ah, der Duft der Wildnis.",
-            "Ich Suche nach den Spuren, die alle wilden Tiere hinterlassen.",
+            "Ich suche nach den Spuren, die alle wilden Tiere hinterlassen.",
             "Ich achte speziell auf die Spuren wilder Tiere, in der Gegend.",
-            "Ich Suche nach den Spuren wilder Tiere.",
+            "Ich suche nach den Spuren wilder Tiere.",
             "Ich Folge den Spuren wilder Kreaturen.",
         },
     },
@@ -720,6 +719,7 @@ RPProc_SeedData = {
         mode = "enemy",
         excludeAnimals = true,
         messages = {
+            "Ich bin das Licht und der Hammer der Gerechtigkeit!",
             "Ihr könnt' nicht vorbei!",
             "Hier kommt der Hammer!",
             "Haltet ein!",
@@ -740,6 +740,7 @@ RPProc_SeedData = {
             "Licht, erfülle {name} mit deiner Kraft!",
             "Haltet durch, {name}, das Licht ist mit euch!",
             "Das Licht ist mit euch, {name}!",
+            "Licht, erhöre mein Gebet!",
             "Licht, schenke {name} neue Kraft!",
             "Fürchte nicht die Finsternis, {name}, das Licht ist mit dir!",
         },
@@ -751,6 +752,7 @@ RPProc_SeedData = {
         mode = "enemy",
         excludeAnimals = true,
         messages = {
+            "Ich bin das Licht und die Faust!",
             "Die Macht des Lichts treffe dich, {name}!",
             "Das Licht treffe dich, {name}!",
             "Spüre die ganze Macht des Lichts, {name}!",
@@ -898,12 +900,30 @@ RPProc_SeedData = {
         chance = 5,
         selfCast = true,
         messages = {
-            "Ich bin das Licht!",
+            "Ich bin das Licht und die Wahrheit!",
             "Im Namen des Lichts!",
+            "Ich bringe das Licht!",
             "Ich fürchte nicht die Finsternis!",
             "Licht, führe meine Hand!",
             "Licht, leite meine Hand!",
             "Licht, erleuchte meinen Pfad!",
+            "Ich trage das Siegel der Kreuzfahrer!",
+            "Meine Sache ist Gerecht!",
+        },
+    },
+    ["Siegel der Rechtschaffenheit"] = {
+        cat = "Paladin",
+        chance = 5,
+        selfCast = true,
+        messages = {
+            "Die das Licht in sich tragen, sollen nicht fürchten die Finsternis!",
+            "Das Licht ist mit den Rechtschaffenden!",
+            "Die da wandeln den Pfad der Rechtschaffenheit, sollen nicht fürchten die Finsternis!",
+            "Die da wandeln den Pfad der Rechtschaffenheit, sollen nicht wanken im Angesicht der Finsternis!",
+            "Die Rechtschaffenden mögen im Licht erstrahlen!",
+            "Die Rechtschaffenden sollen Wandeln im Licht!",
+            "Die Rechtschaffenden sollen nicht Wandeln in der Finsternis!",
+            "Ich trage das Siegel der Rechtschaffenheit!",
         },
     },
     ["Zorn der Gerechtigkeit"] = {
@@ -913,18 +933,11 @@ RPProc_SeedData = {
         messages = {
             "Ich bin das Licht, ich bin der Zorn der Gerechten!",
             "Das Licht ist mit den Gerechten!",
-            "Die Gerechten mögen im Licht erstrahlen!",
+            "Die Gerechten mögen im Licht erstarken!",
             "Ich bin das Licht, ich bin der Zorn!",
-        },
-    },
-    ["Siegel der Rechtschaffenheit"] = {
-        cat = "Paladin",
-        chance = 5,
-        selfCast = true,
-        messages = {
-            "Das Licht ist mit den Rechtschaffenden!",
-            "Die rechtschaffenden mögen im Licht erstrahlen!",
-            "Die rechtschaffenden Wandeln im Licht!",
+            "Ich bin das Licht und der Zorn der Gerechtigkeit!",
+            "Ich bin das Licht und der Schild der Unschuldigen!",
+            "Ich bin das Licht und der Schild der Schwachen!",
         },
     },
 
