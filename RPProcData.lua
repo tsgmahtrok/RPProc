@@ -849,7 +849,7 @@ RPProc_SeedData = {
         mode = "friend",
         messages = {
             "Die da wandeln im Licht, seien erfüllt von seiner Weisheit, {name}.",
-            "Ich segne dich, {name}, mit der Weisheit des Lichts.",
+            "Ich segne {name}, mit der Weisheit des Lichts.",
             "{name}, empfange den Segen der Weisheit.",
             "Der Segen der Weisheit, {name}.",
             "Licht, schenke {name} deine Weisheit.",
