@@ -27,7 +27,7 @@ RPProc_SeedData = {
     -- << General >>
     ["Armbrust abschießen"] = {
         cat = "General",
-        chance = 35,
+        chance = 25,
         selfCast = false,
         mode = "enemy",
         messages = {
@@ -40,30 +40,34 @@ RPProc_SeedData = {
     },
     ["Mineraliensuche"] = {
         cat = "General",
-        chance = 90,
+        chance = 45,
         selfCast = true,
         messages = {
-            "Ich glaube, ..ich rieche Erz.",
-            "Irgendwo hier müsste Erz zu finden sein.",
-            "Um Erz zu finden, muss man nur den Spuren folgen.",
-            "Ich kann Erz riechen.",
+            "Wenn man weiß worauf man achten muss, findet man auch, was man sucht.",
+            "Man kann sehen, wie sich der Boden langsam verändert, nahe besonders wertvoller Erzadern.",
+            "Wenn man den Spuren aufmerksam folgt, wird klar, wo man die Erzader findet.",
+            "Um das wirklich wertvolle Erz zu finden, muss man nur aufmerksam den Spuren folgen.",
+            "Manchmal ist es, als könnte ich das Erz förmlich riechen.",
+            "Der Fels sagt dir, wo seine Reichtümer zu finden sind, wenn du Aufmerksam zuhörst.",
         },
     },
     ["Kräutersuche"] = {
         cat = "General",
-        chance = 90,
+        chance = 45,
         selfCast = true,
         messages = {
-            "In dieser Gegend soll es seltene Kräuter geben.",
-            "Ich achte besonders auf seltene Kräuter.",
-            "Ich hab' ein Näschen für seltene Kräuter.",
+            "Wenn man weiß worauf man achten muss, findet man auch, was man sucht.",
+            "Ich acht' immer auf besonders seltene Kräuter.",
+            "Ich hab' ein Näschen für besondere Kräuter.",
+            "Wenn es um Kräuter geht, hab ich ein besonderes Näschen für Qualität.",
             "Die guten von den schlechten Kräutern zu unterscheiden, das ist die Kunst.",
-            "Ich halte immer die Augen auf, nach besonders seltenen Kräutern.",
+            "Ich halte immer die Augen auf, nach den besonders wertvollen Kräutern.",
+            "Kräuter wachsen da, wo der Boden gut ist, das kann man erkennen, wenn man weiß woran.",
         },
     },
     ["Steingestalt"] = {
         cat = "General",
-        chance = 35,
+        chance = 45,
         selfCast = true,
         messages = {
             "Hart wie Stein!",
@@ -77,16 +81,17 @@ RPProc_SeedData = {
     },
     ["Schatzsucher"] = {
         cat = "General",
-        chance = 90,
+        chance = 45,
         selfCast = true,
         messages = {
+            "Wenn man weiß worauf man achten muss, findet man auch, was man sucht.",
             "Wo verstecken sich die Schätze?",
             "Ich glaube, ich rieche Reichtum..",
         },
     },
     ["Schusswaffe abfeuern"] = {
         cat = "General",
-        chance = 35,
+        chance = 25,
         selfCast = false,
         mode = "enemy",
         messages = {
@@ -99,7 +104,7 @@ RPProc_SeedData = {
     },
     ["Werfen"] = {
         cat = "General",
-        chance = 35,
+        chance = 25,
         selfCast = false,
         mode = "enemy",
         messages = {
@@ -195,12 +200,12 @@ RPProc_SeedData = {
     },
     ["Humanoide aufspüren"] = {
         cat = "Jäger",
-        chance = 90,
+        chance = 45,
         selfCast = true,
         messages = {
-            "Ich Suche nach Spuren anderer Zweibeiner.",
-            "Es stinkt nach Zweibeinern, igitt.",
-            "Ich Folge den Spuren argloser Zweibeiner.",
+            "Ich Suche nach den Spuren anderer Zweibeiner in der Gegend.",
+            "Ich Folge den Spuren anderer Zweibeiner in der Gegend.",
+            "Die Welt erzählt dir, wer auf ihr wandelt, du musst nur Zuhör'n.",
         },
     },
     ["Mal des Jägers"] = {
@@ -317,12 +322,13 @@ RPProc_SeedData = {
     },
     ["Untote aufspüren"] = {
         cat = "Jäger",
-        chance = 90,
+        chance = 45,
         selfCast = true,
         messages = {
-            "Ich suche nach Spuren untoter Dinge.",
-            "Ich Suche nach untoten Dingen.",
-            "Ich folge dem Geruch untoter Dinge.",
+            "Ich Suche nach Spuren untoter Monstrositäten in der Gegend.",
+            "Untote Monstrositäten hinterlassen ihre ganz eigenen Spuren, danach Suche ich.",
+            "Untote hinterlassen meist mehr Spuren, als nur den schlechten Geruch, so finde ich Sie.",
+            "Ich achte speziell auf die Spuren untoter Monstrositäten.",
         },
     },
     ["Wildtier ängstigen"] = {
@@ -338,12 +344,13 @@ RPProc_SeedData = {
     },
     ["Wildtiere aufspüren"] = {
         cat = "Jäger",
-        chance = 90,
+        chance = 45,
         selfCast = true,
         messages = {
             "Ah, der Duft der Wildnis.",
-            "Ich Suche nach Spuren wilder Kreaturen.",
-            "Ich Suche nach Spuren wilder Tiere.",
+            "Ich Suche nach den Spuren, die alle wilden Tiere hinterlassen.",
+            "Ich achte speziell auf die Spuren wilder Tiere, in der Gegend.",
+            "Ich Suche nach den Spuren wilder Tiere.",
             "Ich Folge den Spuren wilder Kreaturen.",
         },
     },
