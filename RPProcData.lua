@@ -1310,7 +1310,7 @@ RPProc_SeedData = {
     -- << Schurke >>
     ["Verstohlenheit"] = {
         cat = "Schurke",
-        chance = 15,
+        chance = 25,
         selfCast = true,
         messages = {
             "Pssst! Kein Wort. Ich bin gar nich' da.",
@@ -1361,7 +1361,7 @@ RPProc_SeedData = {
     },
     ["Kopfnuss"] = {
         cat = "Schurke",
-        chance = 65,
+        chance = 90,
         selfCast = false,
         mode = "enemy",
         messages = {
@@ -1377,7 +1377,7 @@ RPProc_SeedData = {
     },
     ["Kick"] = {
         cat = "Schurke",
-        chance = 35,
+        chance = 25,
         selfCast = false,
         mode = "enemy",
         messages = {
@@ -1393,7 +1393,7 @@ RPProc_SeedData = {
     },
     ["Sprint"] = {
         cat = "Schurke",
-        chance = 15,
+        chance = 35,
         selfCast = true,
         messages = {
             "Muss geh'n, auf dann.",
@@ -1405,12 +1405,16 @@ RPProc_SeedData = {
     },
     ["Entrinnen"] = {
         cat = "Schurke",
-        chance = 45,
-        selfCast = true,
+        chance = 65,
+        selfCast = false,
+        mode = "enemy",
         messages = {
-            "In Ordnung, tanzen wir, {name}",
-            "Zu langsam, {name}!",
-            "Wer mich treff'n will, muss früher Aufstehen!",
+            "In Ordnung, {name}, tanzen wir!",
+            "Alles klar, {name}, geh'n wir's an!",
+            "Zu langsam!",
+            "Dann zeig' ma' was'e kannst, {name}!",
+            "Bin wohl zu schnell für dich, {name}!",
+            "Wer mich treff'n will, muss früher aufstehen!",
             "Nich' ma' gestreift!",
             "Daneb'n!",
         },
