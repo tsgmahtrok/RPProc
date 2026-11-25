@@ -38,6 +38,12 @@
          Freund-Sets sprechen nie einen Gegner an (Self-Heal via
          eigenem Frame = Spruch auf dich), Gegner-Sets nie Verbündete.
       5. Zufälliger Spruch aus der Liste, {name} = Zielname, {me} = dein Name.
+      6. Klassen-Sets (seit 2.9.4): Haben zwei Klassen denselben
+         Zaubernamen (z.B. "Krankheit heilen" bei Priester und
+         Schamane), bekommt das klassenspezifische Set im Data-File
+         den Suffix "#Klassenname" (["Krankheit heilen#Priester"]).
+         Der Engine waehlt beim Proc das Set der eigenen Klasse und
+         faellt sonst auf das allgemeine Set zurueck.
 
     SPEICHERUNG (seit 2.0):
       - Sets + Einstellungen liegen in den SavedVariables (RPProcDB),
@@ -86,7 +92,7 @@
       /rpp langtest 5          -- Sprach-ID testen: sendet SAY in dieser Sprache
 =========================================================================]]--
 
-RPProc_Version = "2.9.3-ExcludeAnimals" -- /run print(RPProc_Version) zum Pruefen
+RPProc_Version = "2.9.4-ClassSets" -- /run print(RPProc_Version) zum Pruefen
 -- Daten-File: /run print(RPProc_DataVersion) zeigt die Seed-Version an
 
 ---------------------------------------------------------------------
@@ -216,8 +222,34 @@ local RPProc_Sets = RPProcDB.sets
 
 local lastSay = 0
 
-local function RPProc_Impl(setName, chance, forceUnit, channel, language)
+-- SET-AUFLOESUNG MIT KLASSEN-SUFFIX (2.9.4): Zwei Klassen koennen
+-- denselben Zaubernamen haben (z.B. "Krankheit heilen" bei Priester
+-- UND Schamane). Im Data-File heisst das klassenspezifische Set dann
+--     ["Zaubersname#Klassenname"] = { ... }
+-- ("#Priester", "#Schamane" ... wie die cat-Felder; alternativ der
+-- englische Klassen-Token "#PRIEST"). Die Makros rufen RPProc wie
+-- immer mit dem NAKTEN Zaubernamen auf. Der Engine prueft zuerst das
+-- Set der EIGENEN Klasse und faellt sonst auf das allgemeine Set
+-- zurueck. So spricht jeder Charakter in seiner eigenen Stimme,
+-- obwohl der Client-Zaubername identisch ist.
+local function RPProc_ResolveSet(setName)
     local set = RPProc_Sets[setName]
+    local locClass, classToken = UnitClass("player")
+    -- 1) exakter Klassen-Token ("PRIEST"), 2) lokalisierte Klasse
+    --    ("Priester") - deckt deutsche UND englische Clients ab
+    for _, suffix in ipairs({ classToken, locClass }) do
+        if suffix then
+            local classSet = RPProc_Sets[setName .. "#" .. suffix]
+            if classSet then
+                return classSet
+            end
+        end
+    end
+    return set
+end
+
+local function RPProc_Impl(setName, chance, forceUnit, channel, language)
+    local set = RPProc_ResolveSet(setName)
     if not set then
         RPProc_Debug("Unbekanntes Set '" .. tostring(setName) .. "'")
         return
@@ -481,7 +513,7 @@ local function RPProc_Msg(text)
 end
 
 local function RPProc_ShowSet(setName)
-    local set = RPProc_Sets[setName]
+    local set = RPProc_ResolveSet(setName)
     if not set then RPProc_Msg("Set '" .. tostring(setName) .. "' nicht gefunden"); return end
     RPProc_Msg("Set \"" .. setName .. "\": Chance " .. tostring(set.chance or 15) ..
         "% | mode " .. tostring(set.mode or "-") ..

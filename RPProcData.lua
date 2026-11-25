@@ -18,10 +18,15 @@
           allowDead = true,           -- optional: Ziel darf tot sein
           messages = { "Spruch mit {name}", ... },
       },
+    Klassen-Sets (Engine 2.9.4+): Haben zwei Klassen denselben
+    Zaubernamen (z.B. "Krankheit heilen" bei Priester UND Schamane),
+    haengt das klassenspezifische Set den Suffix "#Klassenname" an
+    (["Krankheit heilen#Priester"]). Der Engine waehlt beim Proc das
+    Set der eigenen Klasse; das allgemeine Set bleibt Fallback.
     Platzhalter: {name} = Zielname, {me} = dein Name.
 =========================================================================]]--
 
-RPProc_DataVersion = "2026-11-24a" -- /run print(RPProc_DataVersion) zum Pruefen
+RPProc_DataVersion = "2026-11-25b" -- /run print(RPProc_DataVersion) zum Pruefen
 
 RPProc_SeedData = {
     -- << General >>
@@ -96,9 +101,10 @@ RPProc_SeedData = {
         excludeAnimals = true,
         messages = {
             "Dann eben so!",
+            "Zeit für den magischen Stock!",
             "Bombarda Magika!",
-            "Ich bin nicht so wehrlos, wie ich aussehe!",
-            "Ich bin nicht so wehrlos, wie du glaubst!",
+            "Ich bin nicht so wehrlos, wie ich aussehe, {name}!",
+            "Ich bin nicht so wehrlos, wie du glaubst, {name}!",
         },
     },
     ["Schusswaffe abfeuern"] = {
@@ -789,7 +795,7 @@ RPProc_SeedData = {
     },
     ["Läutern"] = {
         cat = "Paladin",
-        chance = 10,
+        chance = 15,
         selfCast = false,
         mode = "friend",
         messages = {
@@ -1010,19 +1016,24 @@ RPProc_SeedData = {
     },
     ["Gedankenschlag"] = {
         cat = "Priester",
-        chance = 15,
+        chance = 10,
         selfCast = false,
         mode = "enemy",
         excludeAnimals = true,
         messages = {
+			"Deine Gedanken verraten dich, {name}, nun spüre deine eigene Finsternis!",
 			"Die Finsternis, die deine Gedanken antreibt, {name}, wird dein Verderben sein.",
 			"Die Finsternis in deinen Gedanken, {name}, wird dein Schaden sein.",
+			"Deine eigenen Gedanken sind es, {name}, die zu deinem Schaden werden.",
+			"Nun stelle dich der Finsternis deiner eigenen Gedanken, {name}.",
+			"Was ich dir nun zeigen werde, {name}, ist die Finsternis deiner eigenen Gedanken.",
+			"Dein Verderben entstammt der Finsternis deiner Gedanken, {name}.",
 			"Wer die Finsternis in seinen Gedanken trägt, wird nicht das Licht haben, {name}.",
         },
     },
     ["Geringes Heilen"] = {
         cat = "Priester",
-        chance = 20,
+        chance = 15,
         selfCast = false,
         mode = "friend",
         messages = {
@@ -1035,7 +1046,7 @@ RPProc_SeedData = {
     },
     ["Großes Heilen"] = {
         cat = "Priester",
-        chance = 35,
+        chance = 25,
         selfCast = false,
         mode = "friend",
         messages = {
@@ -1064,7 +1075,7 @@ RPProc_SeedData = {
     },
     ["Heilen"] = {
         cat = "Priester",
-        chance = 25,
+        chance = 15,
         selfCast = false,
         mode = "friend",
         messages = {
@@ -1081,8 +1092,28 @@ RPProc_SeedData = {
         chance = 60,
         selfCast = true,
         messages = {
-            "Das Licht in mir!",
-            "Licht gib mir Kraft!",
+            "Wer das Licht in sich trägt, wird nicht frieren in der Finsternis.",
+            "Das Licht brennt in mir.",
+            "Ich trage das Licht in mir.",
+            "Die Zuversicht in mir steigt.",
+            "Das Licht brennt hell in mir.",
+        },
+    },
+    ["Krankheit heilen#Priester"] = { -- Klassen-Suffix (Engine 2.9.4+): gleicher Zaubername wie der Schamanen-Set, eigene Priester-Stimme
+        cat = "Priester",
+        chance = 15,
+        selfCast = false,
+        mode = "friend",
+        messages = {
+            "Das Licht befreie dich von Krankheit und Leid, {name}.",
+            "Das Licht erlöse dich von Krankheit und Leid, {name}.",
+            "Licht, erlöse {name} von Krankheit und Leid.",
+            "Licht, reinige {name}s Körper von Krankheit und Leid.",
+            "Deine Krankheit sei gebannt, {name}.",
+            "Sei gereinigt, {name}, im Namen des Lichts.",
+            "Im Glanz' des Lichts bestehen weder Krankheit noch Leid, {name}.",
+            "Wer im Licht wandelt, fürchte weder Krankheit noch Leid, {name}.",
+            "Wer da wandelt im Licht, fürchte weder Krankheit noch Leid, {name}.",
         },
     },
     ["Machtwort: Schild"] = {
@@ -1127,6 +1158,17 @@ RPProc_SeedData = {
             "Wo kein Licht, bleibt nur 'Schmerz'!",
         },
     },
+    ["Psychischer Schrei"] = {
+        cat = "Priester",
+        chance = 60,
+        selfCast = true,
+        messages = {
+            "Weiche Finsternis, im Namen des Lichts!",
+            "Eure eigenen Albträume suchen euch heim!",
+            "Eure eigenen Albträume sind euch auf den Fersen!",
+            "Die Finsternis in eurem Inneren soll euch heimsuchen!",
+        },
+    },
     ["Verblassen"] = {
         cat = "Priester",
         chance = 60,
@@ -1137,6 +1179,17 @@ RPProc_SeedData = {
             "Oh...hups.",
             "Ähm, ...Entschuldigung?",
             "Ähm, ...ich war's... nicht?! ..Vielleicht?",
+        },
+    },
+    ["Verzweifeltes Gebet"] = {
+        cat = "Priester",
+        chance = 60,
+        selfCast = true,
+        messages = {
+            "Der da wandelt auf dem Pfad der Gütigen, soll nicht fürchten die Finsternis!",
+            "Und ob ich schon wanderte den finsteren Pfad, empfinde ich keine Furcht, denn das Licht wohnt in mir!",
+            "Der da folgt dem Pfad des Lichts, soll nicht fürchten die Finsternis!",
+            "Der da folgt dem Pfad der Güte, sei erfüllt vom Licht!",
         },
     },
 
