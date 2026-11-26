@@ -1178,15 +1178,20 @@ RPProc_SeedData = {
 			"Geh' mit leichtem Herzen, {name}.",
         },
     },
-    ["Magiebannung"] = {
+    ["Magiebannung"] = { -- Dispel: Freund/Feind automatisch getrennt (Engine 2.9.5+ DualMode, messagesEnemy)
         cat = "Priester",
         chance = 15,
         selfCast = false,
-        mode = "friend",
         messages = {
-            "Ich befreie dich, {name} von dieser dunklen Magie.",
-            "Die dunklen Magie soll gebannt sein, {name}.",
+            "Ich befreie dich, {name}, von dieser dunklen Magie.",
+            "Die dunkle Magie soll gebannt sein, {name}.",
+            "Ich banne die dunkle Magie, die dir zu schaffen macht, {name}.",
             "Dieser dunkle Zauber sei gebannt, {name}, ich befreie dich!",
+        },
+        messagesEnemy = {
+            "Die dunkle Magie, die dich schützt, soll gebannt sein, {name}.",
+            "Ich banne die dunkle Magie, die dich stärkt, {name}.",
+            "Euer dunkler Zauber sei gebannt, {name}!",
         },
     },
     ["Psychischer Schrei"] = {

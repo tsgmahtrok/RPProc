@@ -38,6 +38,9 @@
          Freund-Sets sprechen nie einen Gegner an (Self-Heal via
          eigenem Frame = Spruch auf dich), Gegner-Sets nie Verbündete.
       5. Zufälliger Spruch aus der Liste, {name} = Zielname, {me} = dein Name.
+         DualMode (2.9.5): Ein Set mit messagesEnemy-Feld spricht bei
+         feindlichem Ziel aus diesem Pool, bei freundlichem aus messages.
+         Ein Makro, ein Set, zwei Stimmungen - z.B. Magiebannung.
       6. Klassen-Sets (seit 2.9.4): Haben zwei Klassen denselben
          Zaubernamen (z.B. "Krankheit heilen" bei Priester und
          Schamane), bekommt das klassenspezifische Set im Data-File
@@ -92,7 +95,7 @@
       /rpp langtest 5          -- Sprach-ID testen: sendet SAY in dieser Sprache
 =========================================================================]]--
 
-RPProc_Version = "2.9.4-ClassSets" -- /run print(RPProc_Version) zum Pruefen
+RPProc_Version = "2.9.5-DualMode" -- /run print(RPProc_Version) zum Pruefen
 -- Daten-File: /run print(RPProc_DataVersion) zeigt die Seed-Version an
 
 ---------------------------------------------------------------------
@@ -258,14 +261,17 @@ local function RPProc_Impl(setName, chance, forceUnit, channel, language)
 
     -- Ziel bestimmen: selfCast = immer Spieler, sonst mouseover/target
     local u
+    local targetIsFriend = true -- DualMode (2.9.5): entscheidet spaeter ueber den Zeilenpool
     if set.selfCast then
         u = "player"
     elseif forceUnit and UnitExists(forceUnit) then
         u = forceUnit -- explizites Ziel aus dem Makro, z.B. "player"
+        targetIsFriend = RPProc_SafeCall(UnitIsFriend, "player", u) and true or false
     else
         u = UnitExists("mouseover") and "mouseover" or "target"
         if not UnitExists(u) then RPProc_Debug("Kein Ziel (mouseover/target)"); return end
         local friendly = UnitIsFriend("player", u)
+        targetIsFriend = friendly
         if set.mode == "enemy" then
             if friendly then RPProc_Debug("mode=enemy, aber Ziel ist freundlich"); return end
         elseif set.mode == "friend" then
@@ -433,10 +439,19 @@ local function RPProc_Impl(setName, chance, forceUnit, channel, language)
     RPProc_Debug("PROC! " .. tostring(setName))
 
     -- 4) Spruch wählen und Platzhalter ersetzen
-    local n = set.messages and table.getn(set.messages) or 0
+    --    DualMode (2.9.5): Hat ein Set ein messagesEnemy-Feld, waehlt der
+    --    Engine bei feindlichem Ziel diesen Zeilenpool, bei freundlichem
+    --    (oder ohne messagesEnemy) wie bisher set.messages. So kann EIN
+    --    Zauber mit EINEM Makro je nach Ziel unterschiedlich sprechen.
+    local pool = set.messages
+    if targetIsFriend == false and set.messagesEnemy ~= nil then
+        pool = set.messagesEnemy
+        RPProc_Debug("DualMode: Feind-Zeilenpool aktiv")
+    end
+    local n = pool and table.getn(pool) or 0
     if n == 0 then return end
     lastSay = now
-    local msg = set.messages[random(n)]
+    local msg = pool[random(n)]
     msg = gsub(msg, "{name}", UnitName(u) or "")
     msg = gsub(msg, "{me}", UnitName("player") or "")
 
