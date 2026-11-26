@@ -35,7 +35,7 @@ local SETS_PER_PAGE = 14
 local MSGS_PER_PAGE = 7
 
 -- Font-Objekte mit Fallback (falls einer auf dem Client fehlt)
-RPProcUI_VERSION = "2.12.4-NameBtn"
+RPProcUI_VERSION = "2.12.5-PoolLabel"
 
 local F_NORMAL = GameFontNormal or GameFontHighlight
 local F_HIGH = GameFontHighlight or F_NORMAL
@@ -288,9 +288,20 @@ local function RefreshMessages()
     msgMaxPage = math.max(1, math.ceil(n / MSGS_PER_PAGE))
     msgPage = Clamp(msgPage, 1, msgMaxPage)
     if selectedMsg and (selectedMsg < 1 or selectedMsg > n) then selectedMsg = nil end
-    widgets.msgCountLbl:SetText("Sprüche – " .. (msgPoolEnemy and "|cffff6666Feind|r" or "|cff00ff00Freund|r") .. " (" .. n .. "):")
+    -- 2.12.5: Sets OHNE messagesEnemy sind "Standard" (Zeilen gelten fuer
+    -- alle Ziele), nicht "Freund". Nur echte DualMode-Sets farbcodieren.
+    local hasEnemy = set.messagesEnemy ~= nil
+    local poolLbl
+    if hasEnemy then
+        poolLbl = msgPoolEnemy and "|cffff6666Feind|r" or "|cff00ff00Freund|r"
+    elseif msgPoolEnemy then
+        poolLbl = "|cffff6666Feind (neu, leer)|r"
+    else
+        poolLbl = "|cffbbbbbbStandard|r"
+    end
+    widgets.msgCountLbl:SetText("Sprüche – " .. poolLbl .. " (" .. n .. "):")
     if widgets.poolBtn then
-        widgets.poolBtn:SetText("Zeilen: " .. (msgPoolEnemy and "|cffff6666Feind|r" or "|cff00ff00Freund|r"))
+        widgets.poolBtn:SetText("Zeilen: " .. poolLbl)
     end
     widgets.msgPageLbl:SetText("Seite " .. msgPage .. "/" .. msgMaxPage)
     local first = (msgPage - 1) * MSGS_PER_PAGE
@@ -867,7 +878,7 @@ local function BuildFrame()
         RefreshMessages()
     end)
     AddTip(widgets.poolBtn, "Zeilen-Pool (DualMode 2.9.5)",
-        "Schaltet die Spruchliste zwischen Freund-Zeilen (messages, Standard) und Feind-Zeilen (messagesEnemy) um. Feind-Zeilen sprechen nur, wenn das Ziel feindlich ist.",
+        "Schaltet die Spruchliste zwischen Freund-Zeilen (messages) und Feind-Zeilen (messagesEnemy) um. Sets OHNE Feind-Zeilen zeigen 'Standard': Diese Zeilen gelten fuer alle Ziele. Umschalten + 'Hinzufuegen' legt einen neuen Feind-Pool an.",
         "Beispiel: Magiebannung hat 4 Freund- und 3 Feind-Zeilen.")
 
     for i = 1, MSGS_PER_PAGE do
