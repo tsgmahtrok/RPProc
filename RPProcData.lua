@@ -1178,7 +1178,7 @@ RPProc_SeedData = {
 			"Geh' mit leichtem Herzen, {name}.",
         },
     },
-    ["Magiebannung"] = { -- Klassen-Suffix (Engine 2.9.4+): gleicher Zaubername wie der Schamanen-Set, eigene Priester-Stimme
+    ["Magiebannung"] = {
         cat = "Priester",
         chance = 15,
         selfCast = false,
