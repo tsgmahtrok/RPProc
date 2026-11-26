@@ -1005,13 +1005,16 @@ RPProc_SeedData = {
         selfCast = false,
         mode = "friend",
         messages = {
-            "Gleich fühlst du dich besser, {name}.",
+            "Kommt Zeit, kommt Heilung, {name}.",
+            "Die Zeit heilt die meisten Wunden, {name}.",
+            "Die Zeit wird deine Wunden heilen, {name}.",
             "Spüre das Licht, {name}, wie es dich erneuert.",
-            "Das Licht erneuert deine Kräfte, {name}, hab Vertrauen.",
+            "Das Licht erneuert deine Kräfte, {name}, hab Geduld.",
             "Das Licht wird deine Kraft erneuern, {name}.",
             "Fühle dich erneuert, {name}, das Licht ist mit dir.",
             "Vertraue auf das Licht und es wird dich heilen, {name}.",
             "Hab' Vertrauen, {name}, und das Licht wird dich heilen.",
+            "Hab' Vertrauen, {name}, und das Licht wird dein Leid lindern.",
         },
     },
     ["Gedankenschlag"] = {
@@ -1021,22 +1024,21 @@ RPProc_SeedData = {
         mode = "enemy",
         excludeAnimals = true,
         messages = {
-			"Deine Gedanken verraten dich, {name}, nun spüre deine eigene Finsternis!",
-			"Die Finsternis, die deine Gedanken antreibt, {name}, wird dein Verderben sein.",
-			"Die Finsternis in deinen Gedanken, {name}, wird dein Schaden sein.",
+			"Deine Gedanken verraten dich, {name}!",
+			"Die Finsternis in deinen Gedanken wird dein Verderben sein, {name}.",
+			"Die Finsternis die in dir lebt, {name}, wird dich zu Fall bringen.",
 			"Deine eigenen Gedanken sind es, {name}, die zu deinem Schaden werden.",
 			"Nun stelle dich der Finsternis deiner eigenen Gedanken, {name}.",
 			"Was ich dir nun zeigen werde, {name}, ist die Finsternis deiner eigenen Gedanken.",
-			"Dein Verderben entstammt der Finsternis deiner Gedanken, {name}.",
-			"Wer die Finsternis in seinen Gedanken trägt, wird nicht das Licht haben, {name}.",
         },
     },
     ["Geringes Heilen"] = {
         cat = "Priester",
-        chance = 15,
+        chance = 10,
         selfCast = false,
         mode = "friend",
         messages = {
+            "Gleich fühlst du dich besser, {name}.",
             "Tröstende Worte, dein Leid zu lindern, {name}.",
             "Ein kleines Gebet der Linderung für dich, {name}.",
             "Ich bete, {name}, deinen Schmerz zu lindern.",
@@ -1046,7 +1048,7 @@ RPProc_SeedData = {
     },
     ["Großes Heilen"] = {
         cat = "Priester",
-        chance = 25,
+        chance = 10,
         selfCast = false,
         mode = "friend",
         messages = {
@@ -1054,7 +1056,7 @@ RPProc_SeedData = {
             "Das Licht vermag die größten Wunden zu schließen, {name}.",
             "Ich bete für deine vollständige Genesung, {name}.",
             "Verliere nicht das Vertrauen, {name}, ich weiche nicht von deiner Seite!",
-            "Auch in der dunkelsten Nacht, vermag das Licht die Finsternis zu vertreiben!",
+            "In der dunkelsten Nacht, vermag nur das Licht die Finsternis zu vertreiben!",
             "Das Licht kann die größte Pein lindern, {name}.",
             "Licht, erhöre mein Gebet in dieser Stunde höchster Not!",
         },
@@ -1075,7 +1077,7 @@ RPProc_SeedData = {
     },
     ["Heilen"] = {
         cat = "Priester",
-        chance = 15,
+        chance = 10,
         selfCast = false,
         mode = "friend",
         messages = {
@@ -1084,12 +1086,12 @@ RPProc_SeedData = {
             "Ich bete für deine Genesung, {name}.",
             "Verliere nicht das Vertrauen, {name}, ich bin bei dir.",
             "Vertraue auf das Licht, {name}, und der Schmerz wird vergehen.",
-            "Das Licht kann die größte Pein lindern, {name}.",
+            "Das Licht kann große Pein lindern, {name}.",
         },
     },
     ["Inneres Feuer"] = {
         cat = "Priester",
-        chance = 60,
+        chance = 45,
         selfCast = true,
         messages = {
             "Wer das Licht in sich trägt, wird nicht frieren in der Finsternis.",
@@ -1101,7 +1103,7 @@ RPProc_SeedData = {
     },
     ["Krankheit heilen#Priester"] = { -- Klassen-Suffix (Engine 2.9.4+): gleicher Zaubername wie der Schamanen-Set, eigene Priester-Stimme
         cat = "Priester",
-        chance = 15,
+        chance = 10,
         selfCast = false,
         mode = "friend",
         messages = {
@@ -1147,7 +1149,7 @@ RPProc_SeedData = {
     },
     ["Schattenwort: Schmerz"] = {
         cat = "Priester",
-        chance = 10,
+        chance = 5,
         selfCast = false,
         mode = "enemy",
         excludeAnimals = true,
@@ -1160,13 +1162,13 @@ RPProc_SeedData = {
     },
     ["Psychischer Schrei"] = {
         cat = "Priester",
-        chance = 60,
+        chance = 35,
         selfCast = true,
         messages = {
-            "Weiche Finsternis, im Namen des Lichts!",
+            "Weiche, Finsternis, im Namen des Lichts!",
             "Eure eigenen Albträume suchen euch heim!",
             "Eure eigenen Albträume sind euch auf den Fersen!",
-            "Die Finsternis in eurem Inneren soll euch heimsuchen!",
+            "Fürchtet das Licht, Anhänger der Finternis!",
         },
     },
     ["Verblassen"] = {
@@ -1178,7 +1180,7 @@ RPProc_SeedData = {
             "Uh oh...",
             "Oh...hups.",
             "Ähm, ...Entschuldigung?",
-            "Ähm, ...ich war's... nicht?! ..Vielleicht?",
+            "Ähm, ...ich war's... nicht?! ..Oder doch?!",
         },
     },
     ["Verzweifeltes Gebet"] = {
