@@ -764,7 +764,7 @@ RPProc_SeedData = {
     },
     ["Heiliges Licht"] = {
         cat = "Paladin",
-        chance = 5,
+        chance = 10,
         selfCast = false,
         mode = "friend",
         messages = {
@@ -1168,7 +1168,7 @@ RPProc_SeedData = {
             "Weiche, Finsternis, im Namen des Lichts!",
             "Eure eigenen Albträume suchen euch heim!",
             "Eure eigenen Albträume sind euch auf den Fersen!",
-            "Fürchtet das Licht, Anhänger der Finternis!",
+            "Fürchtet das Licht, Anhänger der Finsternis!",
         },
     },
     ["Verblassen"] = {
