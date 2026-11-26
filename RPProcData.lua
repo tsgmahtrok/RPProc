@@ -764,7 +764,7 @@ RPProc_SeedData = {
     },
     ["Heiliges Licht"] = {
         cat = "Paladin",
-        chance = 10,
+        chance = 15,
         selfCast = false,
         mode = "friend",
         messages = {
@@ -844,7 +844,7 @@ RPProc_SeedData = {
     },
     ["Segen der Macht"] = {
         cat = "Paladin",
-        chance = 35,
+        chance = 40,
         selfCast = false,
         mode = "friend",
         messages = {
@@ -863,7 +863,7 @@ RPProc_SeedData = {
     },
     ["Segen der Weisheit"] = {
         cat = "Paladin",
-        chance = 35,
+        chance = 40,
         selfCast = false,
         mode = "friend",
         messages = {
@@ -880,7 +880,7 @@ RPProc_SeedData = {
     },
     ["Segen der Könige"] = {
         cat = "Paladin",
-        chance = 35,
+        chance = 40,
         selfCast = false,
         mode = "friend",
         messages = {
@@ -894,7 +894,7 @@ RPProc_SeedData = {
     },
     ["Segen der Rettung"] = {
         cat = "Paladin",
-        chance = 35,
+        chance = 65,
         selfCast = false,
         mode = "friend",
         messages = {
@@ -1147,6 +1147,17 @@ RPProc_SeedData = {
 			"Geh' mit leichtem Herzen, {name}.",
         },
     },
+    ["Psychischer Schrei"] = {
+        cat = "Priester",
+        chance = 35,
+        selfCast = true,
+        messages = {
+            "Weiche, Finsternis, im Namen des Lichts!",
+            "Eure eigenen Albträume suchen euch heim!",
+            "Eure eigenen Albträume sind euch auf den Fersen!",
+            "Fürchtet das Licht, Anhänger der Finsternis!",
+        },
+    },
     ["Schattenwort: Schmerz"] = {
         cat = "Priester",
         chance = 5,
@@ -1158,17 +1169,6 @@ RPProc_SeedData = {
             "Der Schatten bringt 'Schmerz'",
             "Sprich das Wort und es sei 'Schmerz'",
             "Wo kein Licht, bleibt nur 'Schmerz'!",
-        },
-    },
-    ["Psychischer Schrei"] = {
-        cat = "Priester",
-        chance = 35,
-        selfCast = true,
-        messages = {
-            "Weiche, Finsternis, im Namen des Lichts!",
-            "Eure eigenen Albträume suchen euch heim!",
-            "Eure eigenen Albträume sind euch auf den Fersen!",
-            "Fürchtet das Licht, Anhänger der Finsternis!",
         },
     },
     ["Verblassen"] = {
