@@ -37,7 +37,7 @@
          mode = "friend"/"enemy" pro Set filtert das Ziel:
          Freund-Sets sprechen nie einen Gegner an (Self-Heal via
          eigenem Frame = Spruch auf dich), Gegner-Sets nie Verbündete.
-      5. Zufälliger Spruch aus der Liste, {name} = Zielname, {me} = dein Name.
+      5. Zufälliger Spruch aus der Liste, {ziel}/{name} = Zielname, {me} = dein Name.
          DualMode (2.9.5): Ein Set mit messagesEnemy-Feld spricht bei
          feindlichem Ziel aus diesem Pool, bei freundlichem aus messages.
          Ein Makro, ein Set, zwei Stimmungen - z.B. Magiebannung.
@@ -95,7 +95,7 @@
       /rpp langtest 5          -- Sprach-ID testen: sendet SAY in dieser Sprache
 =========================================================================]]--
 
-RPProc_Version = "2.9.5-DualMode" -- /run print(RPProc_Version) zum Pruefen
+RPProc_Version = "2.9.6-ZielAlias" -- /run print(RPProc_Version) zum Pruefen
 -- Daten-File: /run print(RPProc_DataVersion) zeigt die Seed-Version an
 
 ---------------------------------------------------------------------
@@ -453,6 +453,7 @@ local function RPProc_Impl(setName, chance, forceUnit, channel, language)
     lastSay = now
     local msg = pool[random(n)]
     msg = gsub(msg, "{name}", UnitName(u) or "")
+    msg = gsub(msg, "{ziel}", UnitName(u) or "") -- 2.9.6: verstaendlicher Alias fuer {name}
     msg = gsub(msg, "{me}", UnitName("player") or "")
 
     -- 5) Ausgabe im konfigurierten Channel und in der gewählten Sprache
@@ -587,7 +588,7 @@ local function RPProc_EditHandler(args)
     if sub == "addmsg" then
         local setName, msg = RPProc_SplitName(rest)
         local set = setName and RPProc_Sets[setName]
-        if not set then RPProc_Msg('Benutzung: /rpp addmsg "Setname" <Spruchtext mit {name}/{me}>'); return true end
+        if not set then RPProc_Msg('Benutzung: /rpp addmsg "Setname" <Spruchtext mit {ziel}/{name}/{me}>'); return true end
         if msg == "" then RPProc_Msg("Leerer Spruch, nichts hinzugefügt"); return true end
         table.insert(set.messages, msg)
         RPProc_Msg("Spruch hinzugefügt (" .. table.getn(set.messages) .. " Stück): " .. msg)

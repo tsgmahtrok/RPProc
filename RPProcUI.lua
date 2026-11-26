@@ -35,7 +35,7 @@ local SETS_PER_PAGE = 14
 local MSGS_PER_PAGE = 7
 
 -- Font-Objekte mit Fallback (falls einer auf dem Client fehlt)
-RPProcUI_VERSION = "2.12.3-DualMode"
+RPProcUI_VERSION = "2.12.4-NameBtn"
 
 local F_NORMAL = GameFontNormal or GameFontHighlight
 local F_HIGH = GameFontHighlight or F_NORMAL
@@ -884,6 +884,14 @@ local function BuildFrame()
     MakeButton(frame, "Übernehmen", 105, 830, -415, SaveMsg)
     MakeButton(frame, "Hinzufügen", 100, 230, -443, NewMsg)
     MakeButton(frame, "Löschen", 70, 335, -443, DeleteMsg)
+
+    -- 2.12.4: {ziel}-Platzhalter-Button (fuer Nicht-Programmierer)
+    local nameBtn = MakeButton(frame, "{ziel}", 70, 415, -443, function()
+        widgets.msgEditBox:Insert("{ziel}")
+    end)
+    AddTip(nameBtn, "{ziel}-Platzhalter",
+        "Fuegt {ziel} an der Cursor-Position in die Spruchzeile ein (oder haengt es am Ende an). Die Engine ersetzt {ziel} beim Aussprechen durch den Namen des aktuellen Ziels. {name} ist ein aequivalenter Alias und funktioniert genauso.",
+        "Beispiel: 'Eine Gnade fuer {ziel}.' -> 'Eine Gnade fuer Gromdir.'")
 
     RefreshAll()
 end
