@@ -26,7 +26,7 @@
     Platzhalter: {ziel} oder {name} = Zielname, {me} = dein Name.
 =========================================================================]]--
 
-RPProc_DataVersion = "2026-11-25b" -- /run print(RPProc_DataVersion) zum Pruefen
+RPProc_DataVersion = "2026-11-26a" -- /run print(RPProc_DataVersion) zum Pruefen
 
 RPProc_SeedData = {
     -- << General >>
