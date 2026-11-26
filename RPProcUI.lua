@@ -27,6 +27,7 @@ local msgPage, msgMaxPage = 1, 1   -- Seiten der Spruch-Liste
 local selectedSet = nil            -- Name des gewaehlten Sets
 local catFilter = nil              -- aktiver Kategorie-Filter (nil = alle)
 local selectedMsg = nil            -- Index des gewaehlten Spruchs
+local msgPoolEnemy = false       -- DualMode (Engine 2.9.5): false = Freund-Zeilen (messages), true = Feind-Zeilen (messagesEnemy)
 local setRows, msgRows = {}, {}    -- Button-Pools
 local widgets = {}                 -- Detail-Widgets fuer Refresh
 
@@ -34,7 +35,7 @@ local SETS_PER_PAGE = 14
 local MSGS_PER_PAGE = 7
 
 -- Font-Objekte mit Fallback (falls einer auf dem Client fehlt)
-RPProcUI_VERSION = "2.12.2-ChannelFix"
+RPProcUI_VERSION = "2.12.3-DualMode"
 
 local F_NORMAL = GameFontNormal or GameFontHighlight
 local F_HIGH = GameFontHighlight or F_NORMAL
@@ -263,6 +264,14 @@ local function RefreshSetList()
     end
 end
 
+-- DualMode (Engine 2.9.5): aktiver Zeilenpool des gewaehlten Sets
+-- (Freund = set.messages, Feind = set.messagesEnemy)
+local function PoolOf(set)
+    if not set then return nil end
+    if msgPoolEnemy then return set.messagesEnemy end
+    return set.messages
+end
+
 local function RefreshMessages()
     local set = selectedSet and SETS[selectedSet]
     if not widgets.msgCountLbl then return end
@@ -274,18 +283,22 @@ local function RefreshMessages()
         widgets.msgPageLbl:SetText("-")
         return
     end
-    local n = set.messages and table.getn(set.messages) or 0
+    local pool = PoolOf(set)
+    local n = pool and table.getn(pool) or 0
     msgMaxPage = math.max(1, math.ceil(n / MSGS_PER_PAGE))
     msgPage = Clamp(msgPage, 1, msgMaxPage)
     if selectedMsg and (selectedMsg < 1 or selectedMsg > n) then selectedMsg = nil end
-    widgets.msgCountLbl:SetText("Sprüche (" .. n .. "):")
+    widgets.msgCountLbl:SetText("Sprüche – " .. (msgPoolEnemy and "|cffff6666Feind|r" or "|cff00ff00Freund|r") .. " (" .. n .. "):")
+    if widgets.poolBtn then
+        widgets.poolBtn:SetText("Zeilen: " .. (msgPoolEnemy and "|cffff6666Feind|r" or "|cff00ff00Freund|r"))
+    end
     widgets.msgPageLbl:SetText("Seite " .. msgPage .. "/" .. msgMaxPage)
     local first = (msgPage - 1) * MSGS_PER_PAGE
     for i = 1, MSGS_PER_PAGE do
         local row = msgRows[i]
         local idx = first + i
-        if set.messages and set.messages[idx] then
-            row:SetText(idx .. ". " .. string.sub(set.messages[idx], 1, 100))
+        if pool and pool[idx] then
+            row:SetText(idx .. ". " .. string.sub(pool[idx], 1, 100))
             row.idx = idx
             row:Show()
             if idx == selectedMsg then
@@ -299,9 +312,9 @@ local function RefreshMessages()
         end
     end
     widgets.msgEditBox:Enable()
-    if selectedMsg and set.messages and set.messages[selectedMsg] then
+    if selectedMsg and pool and pool[selectedMsg] then
         if not widgets.msgEditBox:HasFocus() then
-            widgets.msgEditBox:SetText(set.messages[selectedMsg])
+            widgets.msgEditBox:SetText(pool[selectedMsg])
         end
     else
         widgets.msgEditBox:SetText("")
@@ -334,6 +347,7 @@ local function RefreshDetail()
         if widgets.langMenu then widgets.langMenu:Hide() end
         widgets.catLbl:Hide()
         widgets.catBtn:Hide()
+        if widgets.poolBtn then widgets.poolBtn:Hide() end
         if widgets.catMenu then widgets.catMenu:Hide() end
         widgets.delBtn:Hide()
         return
@@ -359,6 +373,7 @@ local function RefreshDetail()
     widgets.langIDBox:Show()
     widgets.catLbl:Show()
     widgets.catBtn:Show()
+    widgets.poolBtn:Show()
     widgets.delBtn:Show()
 
     local modeTxt = "Ziel: Alle"
@@ -638,9 +653,16 @@ local function NewMsg()
     if not set then return end
     local text = Trim(widgets.msgEditBox:GetText())
     if text == "" then text = "Neuer Spruch" end
-    set.messages = set.messages or {}
-    table.insert(set.messages, text)
-    selectedMsg = table.getn(set.messages)
+    local pool
+    if msgPoolEnemy then
+        set.messagesEnemy = set.messagesEnemy or {} -- Feind-Pool bei Bedarf anlegen
+        pool = set.messagesEnemy
+    else
+        set.messages = set.messages or {}
+        pool = set.messages
+    end
+    table.insert(pool, text)
+    selectedMsg = table.getn(pool)
     msgPage = math.max(1, math.ceil(selectedMsg / MSGS_PER_PAGE))
     widgets.msgEditBox:SetText("")
     RefreshDetail()
@@ -651,7 +673,9 @@ end
 local function DeleteMsg()
     local set = selectedSet and SETS[selectedSet]
     if not set or not selectedMsg then return end
-    table.remove(set.messages, selectedMsg)
+    local pool = PoolOf(set)
+    if not pool then return end -- Feind-Pool existiert (noch) nicht
+    table.remove(pool, selectedMsg)
     selectedMsg = nil
     RefreshMessages()
     RefreshDetail()
@@ -661,9 +685,11 @@ end
 local function SaveMsg()
     local set = selectedSet and SETS[selectedSet]
     if not set or not selectedMsg then return end
+    local pool = PoolOf(set)
+    if not pool then return end
     local text = Trim(widgets.msgEditBox:GetText())
     if text ~= "" then
-        set.messages[selectedMsg] = text
+        pool[selectedMsg] = text
     end
     widgets.msgEditBox:ClearFocus()
     RefreshMessages()
@@ -672,8 +698,9 @@ end
 local function SelectMsg(idx)
     selectedMsg = idx
     local set = selectedSet and SETS[selectedSet]
-    if set and set.messages and set.messages[idx] then
-        widgets.msgEditBox:SetText(set.messages[idx])
+    local pool = PoolOf(set)
+    if pool and pool[idx] then
+        widgets.msgEditBox:SetText(pool[idx])
     end
     RefreshMessages()
 end
@@ -831,6 +858,17 @@ local function BuildFrame()
     widgets.msgPageLbl = MakeLabel(frame, "-", 785, -230, F_HIGH)
     MakeButton(frame, "<<", 34, 863, -230, function() DoMsgPage(-1) end)
     MakeButton(frame, ">>", 34, 901, -230, function() DoMsgPage(1) end)
+
+    -- DualMode (Engine 2.9.5): Umschalter Freund-/Feind-Zeilenpool
+    widgets.poolBtn = MakeButton(frame, "Zeilen: Freund", 120, 640, -227, function()
+        msgPoolEnemy = not msgPoolEnemy
+        selectedMsg = nil
+        msgPage = 1
+        RefreshMessages()
+    end)
+    AddTip(widgets.poolBtn, "Zeilen-Pool (DualMode 2.9.5)",
+        "Schaltet die Spruchliste zwischen Freund-Zeilen (messages, Standard) und Feind-Zeilen (messagesEnemy) um. Feind-Zeilen sprechen nur, wenn das Ziel feindlich ist.",
+        "Beispiel: Magiebannung hat 4 Freund- und 3 Feind-Zeilen.")
 
     for i = 1, MSGS_PER_PAGE do
         local row = MakeButton(frame, "", 700, 230, -256 - (i - 1) * 21, function(self)
