@@ -1178,6 +1178,17 @@ RPProc_SeedData = {
 			"Geh' mit leichtem Herzen, {name}.",
         },
     },
+    ["Magiebannung"] = { -- Klassen-Suffix (Engine 2.9.4+): gleicher Zaubername wie der Schamanen-Set, eigene Priester-Stimme
+        cat = "Priester",
+        chance = 15,
+        selfCast = false,
+        mode = "friend",
+        messages = {
+            "Ich befreie dich, {name} von dieser dunklen Magie.",
+            "Die dunklen Magie soll gebannt sein, {name}.",
+            "Dieser dunkle Zauber sei gebannt, {name}, ich befreie dich!",
+        },
+    },
     ["Psychischer Schrei"] = {
         cat = "Priester",
         chance = 35,
