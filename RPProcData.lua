@@ -1048,6 +1048,33 @@ RPProc_SeedData = {
             "Hab' Vertrauen, {ziel}, und das Licht wird dein Leid lindern.",
         },
     },
+    ["Furchtzauberschutz"] = {
+        cat = "Priester",
+        chance = 45,
+        selfCast = false,
+        mode = "friend",
+        messages = {
+			"Wer wandelt im Licht, muss nicht fürchten die Finsternis, {ziel}, hab Vertrauen!",
+			"Fürchte nicht die Finsternis, {ziel}, das Licht ist mit uns!",
+			"Vertraue dem Licht, {ziel}, und vergiss' deine Furcht!",
+			"Das Licht ist mir dir, {ziel}, fürchte nicht die Finsternis!",
+			"Bleibe Standhaft im Licht, {ziel}, fürchte nicht die Finsternis!",
+			"Die Finsternis kann dich nicht Schrecken, {ziel}, das Licht ist mit uns!",
+        },
+    },
+    ["Gedankenbesänftigung"] = {
+        cat = "Priester",
+        chance = 35,
+        selfCast = false,
+        mode = "enemy",
+        excludeAnimals = true,
+        messages = {
+			"Komm' zur Ruhe, {ziel}, es ist alles in Ordnung.",
+			"Komm' zur Ruhe, {ziel}, es ist keine Gefahr in Sicht.",
+			"Alles ist gut, {ziel}, genieß die Ruhe.",
+			"Alles ist gut, {ziel}, wir sind keine Gefahr für dich.",
+        },
+    },
     ["Gedankenschlag"] = {
         cat = "Priester",
         chance = 10,
@@ -1118,6 +1145,18 @@ RPProc_SeedData = {
             "Verliere nicht das Vertrauen, {ziel}, ich bin bei dir.",
             "Vertraue auf das Licht, {ziel}, und der Schmerz wird vergehen.",
             "Das Licht kann große Pein lindern, {ziel}.",
+        },
+    },
+    ["Heiliges Feuer"] = {
+        cat = "Priester",
+        chance = 15,
+        selfCast = false,
+        mode = "enemy",
+        excludeAnimals = true,
+        messages = {
+			"Licht, brenne die Finsternis in {ziel} aus.",
+			"Das Licht wird die Finsternis in dir Ausbrennen, {ziel}.",
+			"Zeit, die Finsternis in dir Auszubrennen, {ziel}.",
         },
     },
     ["Inneres Feuer"] = {
@@ -1219,6 +1258,18 @@ RPProc_SeedData = {
             "Wo kein Licht, bleibt nur 'Schmerz'!",
         },
     },
+    ["Untote fesseln"] = {
+        cat = "Priester",
+        chance = 5,
+        selfCast = false,
+        mode = "enemy",
+        excludeAnimals = true,
+        messages = {
+            "Keine Bewegung {ziel}, das Licht befiehlt es!",
+            "Bleib' wo du bist, {ziel}, das Licht befiehlt es!",
+            "Beweg' dich nicht, {ziel}, das Licht befiehlt es!",
+        },
+    },
     ["Verblassen"] = {
         cat = "Priester",
         chance = 60,
@@ -1231,6 +1282,16 @@ RPProc_SeedData = {
             "Ähm, ...ich war's... nicht?! ..Oder doch?!",
         },
     },
+    ["Verschlingende Seuche"] = {
+        cat = "Priester",
+        chance = 10,
+        selfCast = false,
+        mode = "enemy",
+        excludeAnimals = true,
+        messages = {
+			"Der Schatten legt sich über {ziel}.",
+        },
+    },
     ["Verzweifeltes Gebet"] = {
         cat = "Priester",
         chance = 60,
@@ -1240,6 +1301,16 @@ RPProc_SeedData = {
             "Und ob ich schon wanderte den finsteren Pfad, empfinde ich keine Furcht, denn das Licht wohnt in mir!",
             "Der da folgt dem Pfad des Lichts, soll nicht fürchten die Finsternis!",
             "Der da folgt dem Pfad der Güte, sei erfüllt vom Licht!",
+        },
+    },
+    ["Züchtigung"] = {
+        cat = "Priester",
+        chance = 15,
+        selfCast = false,
+        mode = "enemy",
+        excludeAnimals = true,
+        messages = {
+			"Stelle dich dem Licht, {ziel}.",
         },
     },
 
