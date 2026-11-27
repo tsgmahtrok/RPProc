@@ -1122,7 +1122,7 @@ RPProc_SeedData = {
     },
     ["Inneres Feuer"] = {
         cat = "Priester",
-        chance = 45,
+        chance = 35,
         selfCast = true,
         messages = {
             "Wer das Licht in sich trägt, wird nicht frieren in der Finsternis.",
