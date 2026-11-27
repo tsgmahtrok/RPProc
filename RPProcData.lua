@@ -1125,7 +1125,7 @@ RPProc_SeedData = {
         chance = 35,
         selfCast = true,
         messages = {
-            "Wer das Licht in sich trägt, wird nicht frieren in der Finsternis.",
+            "Wer das Licht in sich trägt, wird nicht wandeln in der Finsternis.",
             "Das Licht brennt in mir.",
             "Ich trage das Licht in mir.",
             "Die Zuversicht in mir steigt.",
