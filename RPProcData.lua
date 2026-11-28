@@ -1268,6 +1268,8 @@ RPProc_SeedData = {
             "Keine Bewegung {ziel}, das Licht befiehlt es!",
             "Bleib' wo du bist, {ziel}, das Licht befiehlt es!",
             "Beweg' dich nicht, {ziel}, das Licht befiehlt es!",
+			"Das Licht gebietet dir Einhalt, {ziel}.",
+			"Das Licht befiehlt: Stopp, {ziel}!",
         },
     },
     ["Verblassen"] = {
@@ -1311,6 +1313,7 @@ RPProc_SeedData = {
         excludeAnimals = true,
         messages = {
 			"Stelle dich dem Licht, {ziel}.",
+			"{ziel}, halt, Stopp!",
         },
     },
 
